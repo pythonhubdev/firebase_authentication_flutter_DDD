@@ -306,9 +306,9 @@ packages:
   hooks_riverpod:
     dependency: "direct main"
     description:
-      path: "../../packages/hooks_riverpod"
-      relative: true
-    source: path
+      name: hooks_riverpod
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "1.0.0-dev.4"
   http_multi_server:
     dependency: transitive
