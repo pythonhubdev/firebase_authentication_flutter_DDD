@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_failures.dart';
 
@@ -10,27 +12,7 @@ part of 'auth_failures.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AuthFailuresTearOff {
-  const _$AuthFailuresTearOff();
-
-  ServerError serverError() {
-    return const ServerError();
-  }
-
-  EmailAlreadyInUse emailAlreadyInUse() {
-    return const EmailAlreadyInUse();
-  }
-
-  InavalidEmailAndPasswordCombination invalidEmailAndPasswordCombination() {
-    return const InavalidEmailAndPasswordCombination();
-  }
-}
-
-/// @nodoc
-const $AuthFailures = _$AuthFailuresTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AuthFailures {
@@ -41,6 +23,15 @@ mixin _$AuthFailures {
     required TResult Function() invalidEmailAndPasswordCombination,
   }) =>
       throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
@@ -49,6 +40,7 @@ mixin _$AuthFailures {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
@@ -57,6 +49,16 @@ mixin _$AuthFailures {
         invalidEmailAndPasswordCombination,
   }) =>
       throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InavalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
@@ -80,26 +82,27 @@ class _$AuthFailuresCopyWithImpl<$Res> implements $AuthFailuresCopyWith<$Res> {
   _$AuthFailuresCopyWithImpl(this._value, this._then);
 
   final AuthFailures _value;
+
   // ignore: unused_field
   final $Res Function(AuthFailures) _then;
 }
 
 /// @nodoc
-abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(
-          ServerError value, $Res Function(ServerError) then) =
-      _$ServerErrorCopyWithImpl<$Res>;
+abstract class _$$ServerErrorCopyWith<$Res> {
+  factory _$$ServerErrorCopyWith(
+          _$ServerError value, $Res Function(_$ServerError) then) =
+      __$$ServerErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ServerErrorCopyWithImpl<$Res> extends _$AuthFailuresCopyWithImpl<$Res>
-    implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(
-      ServerError _value, $Res Function(ServerError) _then)
-      : super(_value, (v) => _then(v as ServerError));
+class __$$ServerErrorCopyWithImpl<$Res> extends _$AuthFailuresCopyWithImpl<$Res>
+    implements _$$ServerErrorCopyWith<$Res> {
+  __$$ServerErrorCopyWithImpl(
+      _$ServerError _value, $Res Function(_$ServerError) _then)
+      : super(_value, (v) => _then(v as _$ServerError));
 
   @override
-  ServerError get _value => super._value as ServerError;
+  _$ServerError get _value => super._value as _$ServerError;
 }
 
 /// @nodoc
@@ -114,7 +117,8 @@ class _$ServerError implements ServerError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ServerError);
   }
 
   @override
@@ -128,6 +132,16 @@ class _$ServerError implements ServerError {
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
     return serverError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+  }) {
+    return serverError?.call();
   }
 
   @override
@@ -157,6 +171,17 @@ class _$ServerError implements ServerError {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InavalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+  }) {
+    return serverError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
@@ -176,22 +201,22 @@ abstract class ServerError implements AuthFailures {
 }
 
 /// @nodoc
-abstract class $EmailAlreadyInUseCopyWith<$Res> {
-  factory $EmailAlreadyInUseCopyWith(
-          EmailAlreadyInUse value, $Res Function(EmailAlreadyInUse) then) =
-      _$EmailAlreadyInUseCopyWithImpl<$Res>;
+abstract class _$$EmailAlreadyInUseCopyWith<$Res> {
+  factory _$$EmailAlreadyInUseCopyWith(
+          _$EmailAlreadyInUse value, $Res Function(_$EmailAlreadyInUse) then) =
+      __$$EmailAlreadyInUseCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$EmailAlreadyInUseCopyWithImpl<$Res>
+class __$$EmailAlreadyInUseCopyWithImpl<$Res>
     extends _$AuthFailuresCopyWithImpl<$Res>
-    implements $EmailAlreadyInUseCopyWith<$Res> {
-  _$EmailAlreadyInUseCopyWithImpl(
-      EmailAlreadyInUse _value, $Res Function(EmailAlreadyInUse) _then)
-      : super(_value, (v) => _then(v as EmailAlreadyInUse));
+    implements _$$EmailAlreadyInUseCopyWith<$Res> {
+  __$$EmailAlreadyInUseCopyWithImpl(
+      _$EmailAlreadyInUse _value, $Res Function(_$EmailAlreadyInUse) _then)
+      : super(_value, (v) => _then(v as _$EmailAlreadyInUse));
 
   @override
-  EmailAlreadyInUse get _value => super._value as EmailAlreadyInUse;
+  _$EmailAlreadyInUse get _value => super._value as _$EmailAlreadyInUse;
 }
 
 /// @nodoc
@@ -206,7 +231,8 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is EmailAlreadyInUse);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EmailAlreadyInUse);
   }
 
   @override
@@ -220,6 +246,16 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
     return emailAlreadyInUse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+  }) {
+    return emailAlreadyInUse?.call();
   }
 
   @override
@@ -249,6 +285,17 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InavalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+  }) {
+    return emailAlreadyInUse?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
@@ -268,25 +315,25 @@ abstract class EmailAlreadyInUse implements AuthFailures {
 }
 
 /// @nodoc
-abstract class $InavalidEmailAndPasswordCombinationCopyWith<$Res> {
-  factory $InavalidEmailAndPasswordCombinationCopyWith(
-          InavalidEmailAndPasswordCombination value,
-          $Res Function(InavalidEmailAndPasswordCombination) then) =
-      _$InavalidEmailAndPasswordCombinationCopyWithImpl<$Res>;
+abstract class _$$InavalidEmailAndPasswordCombinationCopyWith<$Res> {
+  factory _$$InavalidEmailAndPasswordCombinationCopyWith(
+          _$InavalidEmailAndPasswordCombination value,
+          $Res Function(_$InavalidEmailAndPasswordCombination) then) =
+      __$$InavalidEmailAndPasswordCombinationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InavalidEmailAndPasswordCombinationCopyWithImpl<$Res>
+class __$$InavalidEmailAndPasswordCombinationCopyWithImpl<$Res>
     extends _$AuthFailuresCopyWithImpl<$Res>
-    implements $InavalidEmailAndPasswordCombinationCopyWith<$Res> {
-  _$InavalidEmailAndPasswordCombinationCopyWithImpl(
-      InavalidEmailAndPasswordCombination _value,
-      $Res Function(InavalidEmailAndPasswordCombination) _then)
-      : super(_value, (v) => _then(v as InavalidEmailAndPasswordCombination));
+    implements _$$InavalidEmailAndPasswordCombinationCopyWith<$Res> {
+  __$$InavalidEmailAndPasswordCombinationCopyWithImpl(
+      _$InavalidEmailAndPasswordCombination _value,
+      $Res Function(_$InavalidEmailAndPasswordCombination) _then)
+      : super(_value, (v) => _then(v as _$InavalidEmailAndPasswordCombination));
 
   @override
-  InavalidEmailAndPasswordCombination get _value =>
-      super._value as InavalidEmailAndPasswordCombination;
+  _$InavalidEmailAndPasswordCombination get _value =>
+      super._value as _$InavalidEmailAndPasswordCombination;
 }
 
 /// @nodoc
@@ -303,7 +350,8 @@ class _$InavalidEmailAndPasswordCombination
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InavalidEmailAndPasswordCombination);
+        (other.runtimeType == runtimeType &&
+            other is _$InavalidEmailAndPasswordCombination);
   }
 
   @override
@@ -317,6 +365,16 @@ class _$InavalidEmailAndPasswordCombination
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
     return invalidEmailAndPasswordCombination();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+  }) {
+    return invalidEmailAndPasswordCombination?.call();
   }
 
   @override
@@ -342,6 +400,17 @@ class _$InavalidEmailAndPasswordCombination
         invalidEmailAndPasswordCombination,
   }) {
     return invalidEmailAndPasswordCombination(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InavalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+  }) {
+    return invalidEmailAndPasswordCombination?.call(this);
   }
 
   @override

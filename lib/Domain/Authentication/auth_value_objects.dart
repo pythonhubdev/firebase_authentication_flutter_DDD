@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import '../Core/value_object.dart';
 
+import '../Core/value_object.dart';
 import 'auth_value_failures.dart';
 import 'auth_value_validators.dart';
 
@@ -13,8 +13,6 @@ class EmailAddress extends ValueObject<String> {
 
   @override
   final Either<AuthValueFailures<String>, String>? valueObject;
-
-
 }
 
 class Password extends ValueObject<String> {
@@ -27,5 +25,3 @@ class Password extends ValueObject<String> {
   @override
   final Either<AuthValueFailures<String>, String>? valueObject;
 }
-
-

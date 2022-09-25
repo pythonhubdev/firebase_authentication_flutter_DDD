@@ -19,5 +19,4 @@ class AuthValueFailures<T> with _$AuthValueFailures<T> {
 
   const factory AuthValueFailures.noNumber({required String? failedValue}) =
       NoNumber<T>;
-
 }
