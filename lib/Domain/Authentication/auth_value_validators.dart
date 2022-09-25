@@ -1,6 +1,4 @@
 import 'package:dartz/dartz.dart';
-
-
 import 'auth_value_failures.dart';
 
 Either<AuthValueFailures<String>, String> validateEmailAddress({
@@ -46,5 +44,3 @@ Either<AuthValueFailures<String>, String> validatePassword({
     return right(password);
   }
 }
-
-

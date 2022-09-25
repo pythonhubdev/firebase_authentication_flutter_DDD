@@ -27,8 +27,8 @@ class LoginPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final formStates = ref.watch(loginProvider);
     final formEvents = ref.watch(loginProvider.notifier);
-    ref.listen<AuthStates>(loginProvider, (value) {
-      value.authFailureOrSuccess.fold(
+    ref.listen<AuthStates>(loginProvider, (previous, next) {
+      next.authFailureOrSuccess.fold(
         () {},
         (either) => either.fold(
           (failure) {
@@ -64,7 +64,11 @@ class LoginPage extends HookConsumerWidget {
                       .headline5!
                       .copyWith(color: Colors.white),
                 ));
-            Navigator.push<Widget>(context, MaterialPageRoute(builder: (context) => HomePage(),));
+            Navigator.push<Widget>(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ));
           },
         ),
       );
@@ -88,8 +92,13 @@ class LoginPage extends HookConsumerWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Welcome !', style: Theme.of(context).textTheme.headline2,),
-                      const SizedBox(height: 50,),
+                      Text(
+                        'Welcome !',
+                        style: Theme.of(context).textTheme.headline2,
+                      ),
+                      const SizedBox(
+                        height: 50,
+                      ),
                       TextFormField(
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         onChanged: (value) => formEvents.mapEventsToStates(
@@ -186,13 +195,14 @@ class LoginPage extends HookConsumerWidget {
                           ),
                         ],
                       ),
-                      if(formStates.isSubmitting)
-                        ...[
-                          const SizedBox(height: 20,),
-                          const LinearProgressIndicator(
-                            minHeight: 6,
-                          )
-                        ]
+                      if (formStates.isSubmitting) ...[
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const LinearProgressIndicator(
+                          minHeight: 6,
+                        )
+                      ]
                     ],
                   ),
                 ),

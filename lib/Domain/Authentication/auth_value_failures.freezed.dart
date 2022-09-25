@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_value_failures.dart';
 
@@ -10,45 +12,7 @@ part of 'auth_value_failures.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AuthValueFailuresTearOff {
-  const _$AuthValueFailuresTearOff();
-
-  InvalidEmail<T> invalidEmail<T>({required String? failedValue}) {
-    return InvalidEmail<T>(
-      failedValue: failedValue,
-    );
-  }
-
-  ShortPassword<T> shortPassword<T>({required String? failedValue}) {
-    return ShortPassword<T>(
-      failedValue: failedValue,
-    );
-  }
-
-  NoSpecialSymbol<T> noSpecialSymbol<T>({required String? failedValue}) {
-    return NoSpecialSymbol<T>(
-      failedValue: failedValue,
-    );
-  }
-
-  NoUpperCase<T> noUpperCase<T>({required String? failedValue}) {
-    return NoUpperCase<T>(
-      failedValue: failedValue,
-    );
-  }
-
-  NoNumber<T> noNumber<T>({required String? failedValue}) {
-    return NoNumber<T>(
-      failedValue: failedValue,
-    );
-  }
-}
-
-/// @nodoc
-const $AuthValueFailures = _$AuthValueFailuresTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AuthValueFailures<T> {
@@ -63,6 +27,17 @@ mixin _$AuthValueFailures<T> {
     required TResult Function(String? failedValue) noNumber,
   }) =>
       throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? failedValue)? invalidEmail,
+    TResult Function(String? failedValue)? shortPassword,
+    TResult Function(String? failedValue)? noSpecialSymbol,
+    TResult Function(String? failedValue)? noUpperCase,
+    TResult Function(String? failedValue)? noNumber,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? failedValue)? invalidEmail,
@@ -73,6 +48,7 @@ mixin _$AuthValueFailures<T> {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
@@ -82,6 +58,17 @@ mixin _$AuthValueFailures<T> {
     required TResult Function(NoNumber<T> value) noNumber,
   }) =>
       throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoSpecialSymbol<T> value)? noSpecialSymbol,
+    TResult Function(NoUpperCase<T> value)? noUpperCase,
+    TResult Function(NoNumber<T> value)? noNumber,
+  }) =>
+      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
@@ -103,6 +90,7 @@ abstract class $AuthValueFailuresCopyWith<T, $Res> {
   factory $AuthValueFailuresCopyWith(AuthValueFailures<T> value,
           $Res Function(AuthValueFailures<T>) then) =
       _$AuthValueFailuresCopyWithImpl<T, $Res>;
+
   $Res call({String? failedValue});
 }
 
@@ -112,6 +100,7 @@ class _$AuthValueFailuresCopyWithImpl<T, $Res>
   _$AuthValueFailuresCopyWithImpl(this._value, this._then);
 
   final AuthValueFailures<T> _value;
+
   // ignore: unused_field
   final $Res Function(AuthValueFailures<T>) _then;
 
@@ -129,31 +118,32 @@ class _$AuthValueFailuresCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-abstract class $InvalidEmailCopyWith<T, $Res>
+abstract class _$$InvalidEmailCopyWith<T, $Res>
     implements $AuthValueFailuresCopyWith<T, $Res> {
-  factory $InvalidEmailCopyWith(
-          InvalidEmail<T> value, $Res Function(InvalidEmail<T>) then) =
-      _$InvalidEmailCopyWithImpl<T, $Res>;
+  factory _$$InvalidEmailCopyWith(
+          _$InvalidEmail<T> value, $Res Function(_$InvalidEmail<T>) then) =
+      __$$InvalidEmailCopyWithImpl<T, $Res>;
+
   @override
   $Res call({String? failedValue});
 }
 
 /// @nodoc
-class _$InvalidEmailCopyWithImpl<T, $Res>
+class __$$InvalidEmailCopyWithImpl<T, $Res>
     extends _$AuthValueFailuresCopyWithImpl<T, $Res>
-    implements $InvalidEmailCopyWith<T, $Res> {
-  _$InvalidEmailCopyWithImpl(
-      InvalidEmail<T> _value, $Res Function(InvalidEmail<T>) _then)
-      : super(_value, (v) => _then(v as InvalidEmail<T>));
+    implements _$$InvalidEmailCopyWith<T, $Res> {
+  __$$InvalidEmailCopyWithImpl(
+      _$InvalidEmail<T> _value, $Res Function(_$InvalidEmail<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidEmail<T>));
 
   @override
-  InvalidEmail<T> get _value => super._value as InvalidEmail<T>;
+  _$InvalidEmail<T> get _value => super._value as _$InvalidEmail<T>;
 
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
-    return _then(InvalidEmail<T>(
+    return _then(_$InvalidEmail<T>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -178,20 +168,20 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidEmail<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidEmail<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
-  $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
-      _$InvalidEmailCopyWithImpl<T, InvalidEmail<T>>(this, _$identity);
+  _$$InvalidEmailCopyWith<T, _$InvalidEmail<T>> get copyWith =>
+      __$$InvalidEmailCopyWithImpl<T, _$InvalidEmail<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -203,6 +193,18 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(String? failedValue) noNumber,
   }) {
     return invalidEmail(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? failedValue)? invalidEmail,
+    TResult Function(String? failedValue)? shortPassword,
+    TResult Function(String? failedValue)? noSpecialSymbol,
+    TResult Function(String? failedValue)? noUpperCase,
+    TResult Function(String? failedValue)? noNumber,
+  }) {
+    return invalidEmail?.call(failedValue);
   }
 
   @override
@@ -235,6 +237,18 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoSpecialSymbol<T> value)? noSpecialSymbol,
+    TResult Function(NoUpperCase<T> value)? noUpperCase,
+    TResult Function(NoNumber<T> value)? noNumber,
+  }) {
+    return invalidEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -251,43 +265,45 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 }
 
 abstract class InvalidEmail<T> implements AuthValueFailures<T> {
-  const factory InvalidEmail({required String? failedValue}) =
+  const factory InvalidEmail({required final String? failedValue}) =
       _$InvalidEmail<T>;
 
   @override
-  String? get failedValue => throw _privateConstructorUsedError;
+  String? get failedValue;
+
   @override
   @JsonKey(ignore: true)
-  $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
+  _$$InvalidEmailCopyWith<T, _$InvalidEmail<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ShortPasswordCopyWith<T, $Res>
+abstract class _$$ShortPasswordCopyWith<T, $Res>
     implements $AuthValueFailuresCopyWith<T, $Res> {
-  factory $ShortPasswordCopyWith(
-          ShortPassword<T> value, $Res Function(ShortPassword<T>) then) =
-      _$ShortPasswordCopyWithImpl<T, $Res>;
+  factory _$$ShortPasswordCopyWith(
+          _$ShortPassword<T> value, $Res Function(_$ShortPassword<T>) then) =
+      __$$ShortPasswordCopyWithImpl<T, $Res>;
+
   @override
   $Res call({String? failedValue});
 }
 
 /// @nodoc
-class _$ShortPasswordCopyWithImpl<T, $Res>
+class __$$ShortPasswordCopyWithImpl<T, $Res>
     extends _$AuthValueFailuresCopyWithImpl<T, $Res>
-    implements $ShortPasswordCopyWith<T, $Res> {
-  _$ShortPasswordCopyWithImpl(
-      ShortPassword<T> _value, $Res Function(ShortPassword<T>) _then)
-      : super(_value, (v) => _then(v as ShortPassword<T>));
+    implements _$$ShortPasswordCopyWith<T, $Res> {
+  __$$ShortPasswordCopyWithImpl(
+      _$ShortPassword<T> _value, $Res Function(_$ShortPassword<T>) _then)
+      : super(_value, (v) => _then(v as _$ShortPassword<T>));
 
   @override
-  ShortPassword<T> get _value => super._value as ShortPassword<T>;
+  _$ShortPassword<T> get _value => super._value as _$ShortPassword<T>;
 
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
-    return _then(ShortPassword<T>(
+    return _then(_$ShortPassword<T>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -312,20 +328,20 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ShortPassword<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is _$ShortPassword<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
-  $ShortPasswordCopyWith<T, ShortPassword<T>> get copyWith =>
-      _$ShortPasswordCopyWithImpl<T, ShortPassword<T>>(this, _$identity);
+  _$$ShortPasswordCopyWith<T, _$ShortPassword<T>> get copyWith =>
+      __$$ShortPasswordCopyWithImpl<T, _$ShortPassword<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -337,6 +353,18 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(String? failedValue) noNumber,
   }) {
     return shortPassword(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? failedValue)? invalidEmail,
+    TResult Function(String? failedValue)? shortPassword,
+    TResult Function(String? failedValue)? noSpecialSymbol,
+    TResult Function(String? failedValue)? noUpperCase,
+    TResult Function(String? failedValue)? noNumber,
+  }) {
+    return shortPassword?.call(failedValue);
   }
 
   @override
@@ -369,6 +397,18 @@ class _$ShortPassword<T> implements ShortPassword<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoSpecialSymbol<T> value)? noSpecialSymbol,
+    TResult Function(NoUpperCase<T> value)? noUpperCase,
+    TResult Function(NoNumber<T> value)? noNumber,
+  }) {
+    return shortPassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -385,43 +425,45 @@ class _$ShortPassword<T> implements ShortPassword<T> {
 }
 
 abstract class ShortPassword<T> implements AuthValueFailures<T> {
-  const factory ShortPassword({required String? failedValue}) =
+  const factory ShortPassword({required final String? failedValue}) =
       _$ShortPassword<T>;
 
   @override
-  String? get failedValue => throw _privateConstructorUsedError;
+  String? get failedValue;
+
   @override
   @JsonKey(ignore: true)
-  $ShortPasswordCopyWith<T, ShortPassword<T>> get copyWith =>
+  _$$ShortPasswordCopyWith<T, _$ShortPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NoSpecialSymbolCopyWith<T, $Res>
+abstract class _$$NoSpecialSymbolCopyWith<T, $Res>
     implements $AuthValueFailuresCopyWith<T, $Res> {
-  factory $NoSpecialSymbolCopyWith(
-          NoSpecialSymbol<T> value, $Res Function(NoSpecialSymbol<T>) then) =
-      _$NoSpecialSymbolCopyWithImpl<T, $Res>;
+  factory _$$NoSpecialSymbolCopyWith(_$NoSpecialSymbol<T> value,
+          $Res Function(_$NoSpecialSymbol<T>) then) =
+      __$$NoSpecialSymbolCopyWithImpl<T, $Res>;
+
   @override
   $Res call({String? failedValue});
 }
 
 /// @nodoc
-class _$NoSpecialSymbolCopyWithImpl<T, $Res>
+class __$$NoSpecialSymbolCopyWithImpl<T, $Res>
     extends _$AuthValueFailuresCopyWithImpl<T, $Res>
-    implements $NoSpecialSymbolCopyWith<T, $Res> {
-  _$NoSpecialSymbolCopyWithImpl(
-      NoSpecialSymbol<T> _value, $Res Function(NoSpecialSymbol<T>) _then)
-      : super(_value, (v) => _then(v as NoSpecialSymbol<T>));
+    implements _$$NoSpecialSymbolCopyWith<T, $Res> {
+  __$$NoSpecialSymbolCopyWithImpl(
+      _$NoSpecialSymbol<T> _value, $Res Function(_$NoSpecialSymbol<T>) _then)
+      : super(_value, (v) => _then(v as _$NoSpecialSymbol<T>));
 
   @override
-  NoSpecialSymbol<T> get _value => super._value as NoSpecialSymbol<T>;
+  _$NoSpecialSymbol<T> get _value => super._value as _$NoSpecialSymbol<T>;
 
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
-    return _then(NoSpecialSymbol<T>(
+    return _then(_$NoSpecialSymbol<T>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -446,20 +488,21 @@ class _$NoSpecialSymbol<T> implements NoSpecialSymbol<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NoSpecialSymbol<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is _$NoSpecialSymbol<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
-  $NoSpecialSymbolCopyWith<T, NoSpecialSymbol<T>> get copyWith =>
-      _$NoSpecialSymbolCopyWithImpl<T, NoSpecialSymbol<T>>(this, _$identity);
+  _$$NoSpecialSymbolCopyWith<T, _$NoSpecialSymbol<T>> get copyWith =>
+      __$$NoSpecialSymbolCopyWithImpl<T, _$NoSpecialSymbol<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -471,6 +514,18 @@ class _$NoSpecialSymbol<T> implements NoSpecialSymbol<T> {
     required TResult Function(String? failedValue) noNumber,
   }) {
     return noSpecialSymbol(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? failedValue)? invalidEmail,
+    TResult Function(String? failedValue)? shortPassword,
+    TResult Function(String? failedValue)? noSpecialSymbol,
+    TResult Function(String? failedValue)? noUpperCase,
+    TResult Function(String? failedValue)? noNumber,
+  }) {
+    return noSpecialSymbol?.call(failedValue);
   }
 
   @override
@@ -503,6 +558,18 @@ class _$NoSpecialSymbol<T> implements NoSpecialSymbol<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoSpecialSymbol<T> value)? noSpecialSymbol,
+    TResult Function(NoUpperCase<T> value)? noUpperCase,
+    TResult Function(NoNumber<T> value)? noNumber,
+  }) {
+    return noSpecialSymbol?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -519,43 +586,45 @@ class _$NoSpecialSymbol<T> implements NoSpecialSymbol<T> {
 }
 
 abstract class NoSpecialSymbol<T> implements AuthValueFailures<T> {
-  const factory NoSpecialSymbol({required String? failedValue}) =
+  const factory NoSpecialSymbol({required final String? failedValue}) =
       _$NoSpecialSymbol<T>;
 
   @override
-  String? get failedValue => throw _privateConstructorUsedError;
+  String? get failedValue;
+
   @override
   @JsonKey(ignore: true)
-  $NoSpecialSymbolCopyWith<T, NoSpecialSymbol<T>> get copyWith =>
+  _$$NoSpecialSymbolCopyWith<T, _$NoSpecialSymbol<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NoUpperCaseCopyWith<T, $Res>
+abstract class _$$NoUpperCaseCopyWith<T, $Res>
     implements $AuthValueFailuresCopyWith<T, $Res> {
-  factory $NoUpperCaseCopyWith(
-          NoUpperCase<T> value, $Res Function(NoUpperCase<T>) then) =
-      _$NoUpperCaseCopyWithImpl<T, $Res>;
+  factory _$$NoUpperCaseCopyWith(
+          _$NoUpperCase<T> value, $Res Function(_$NoUpperCase<T>) then) =
+      __$$NoUpperCaseCopyWithImpl<T, $Res>;
+
   @override
   $Res call({String? failedValue});
 }
 
 /// @nodoc
-class _$NoUpperCaseCopyWithImpl<T, $Res>
+class __$$NoUpperCaseCopyWithImpl<T, $Res>
     extends _$AuthValueFailuresCopyWithImpl<T, $Res>
-    implements $NoUpperCaseCopyWith<T, $Res> {
-  _$NoUpperCaseCopyWithImpl(
-      NoUpperCase<T> _value, $Res Function(NoUpperCase<T>) _then)
-      : super(_value, (v) => _then(v as NoUpperCase<T>));
+    implements _$$NoUpperCaseCopyWith<T, $Res> {
+  __$$NoUpperCaseCopyWithImpl(
+      _$NoUpperCase<T> _value, $Res Function(_$NoUpperCase<T>) _then)
+      : super(_value, (v) => _then(v as _$NoUpperCase<T>));
 
   @override
-  NoUpperCase<T> get _value => super._value as NoUpperCase<T>;
+  _$NoUpperCase<T> get _value => super._value as _$NoUpperCase<T>;
 
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
-    return _then(NoUpperCase<T>(
+    return _then(_$NoUpperCase<T>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -580,20 +649,20 @@ class _$NoUpperCase<T> implements NoUpperCase<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NoUpperCase<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is _$NoUpperCase<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
-  $NoUpperCaseCopyWith<T, NoUpperCase<T>> get copyWith =>
-      _$NoUpperCaseCopyWithImpl<T, NoUpperCase<T>>(this, _$identity);
+  _$$NoUpperCaseCopyWith<T, _$NoUpperCase<T>> get copyWith =>
+      __$$NoUpperCaseCopyWithImpl<T, _$NoUpperCase<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -605,6 +674,18 @@ class _$NoUpperCase<T> implements NoUpperCase<T> {
     required TResult Function(String? failedValue) noNumber,
   }) {
     return noUpperCase(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? failedValue)? invalidEmail,
+    TResult Function(String? failedValue)? shortPassword,
+    TResult Function(String? failedValue)? noSpecialSymbol,
+    TResult Function(String? failedValue)? noUpperCase,
+    TResult Function(String? failedValue)? noNumber,
+  }) {
+    return noUpperCase?.call(failedValue);
   }
 
   @override
@@ -637,6 +718,18 @@ class _$NoUpperCase<T> implements NoUpperCase<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoSpecialSymbol<T> value)? noSpecialSymbol,
+    TResult Function(NoUpperCase<T> value)? noUpperCase,
+    TResult Function(NoNumber<T> value)? noNumber,
+  }) {
+    return noUpperCase?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -653,41 +746,45 @@ class _$NoUpperCase<T> implements NoUpperCase<T> {
 }
 
 abstract class NoUpperCase<T> implements AuthValueFailures<T> {
-  const factory NoUpperCase({required String? failedValue}) = _$NoUpperCase<T>;
+  const factory NoUpperCase({required final String? failedValue}) =
+      _$NoUpperCase<T>;
 
   @override
-  String? get failedValue => throw _privateConstructorUsedError;
+  String? get failedValue;
+
   @override
   @JsonKey(ignore: true)
-  $NoUpperCaseCopyWith<T, NoUpperCase<T>> get copyWith =>
+  _$$NoUpperCaseCopyWith<T, _$NoUpperCase<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NoNumberCopyWith<T, $Res>
+abstract class _$$NoNumberCopyWith<T, $Res>
     implements $AuthValueFailuresCopyWith<T, $Res> {
-  factory $NoNumberCopyWith(
-          NoNumber<T> value, $Res Function(NoNumber<T>) then) =
-      _$NoNumberCopyWithImpl<T, $Res>;
+  factory _$$NoNumberCopyWith(
+          _$NoNumber<T> value, $Res Function(_$NoNumber<T>) then) =
+      __$$NoNumberCopyWithImpl<T, $Res>;
+
   @override
   $Res call({String? failedValue});
 }
 
 /// @nodoc
-class _$NoNumberCopyWithImpl<T, $Res>
+class __$$NoNumberCopyWithImpl<T, $Res>
     extends _$AuthValueFailuresCopyWithImpl<T, $Res>
-    implements $NoNumberCopyWith<T, $Res> {
-  _$NoNumberCopyWithImpl(NoNumber<T> _value, $Res Function(NoNumber<T>) _then)
-      : super(_value, (v) => _then(v as NoNumber<T>));
+    implements _$$NoNumberCopyWith<T, $Res> {
+  __$$NoNumberCopyWithImpl(
+      _$NoNumber<T> _value, $Res Function(_$NoNumber<T>) _then)
+      : super(_value, (v) => _then(v as _$NoNumber<T>));
 
   @override
-  NoNumber<T> get _value => super._value as NoNumber<T>;
+  _$NoNumber<T> get _value => super._value as _$NoNumber<T>;
 
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
-    return _then(NoNumber<T>(
+    return _then(_$NoNumber<T>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -712,20 +809,20 @@ class _$NoNumber<T> implements NoNumber<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NoNumber<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is _$NoNumber<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
-  $NoNumberCopyWith<T, NoNumber<T>> get copyWith =>
-      _$NoNumberCopyWithImpl<T, NoNumber<T>>(this, _$identity);
+  _$$NoNumberCopyWith<T, _$NoNumber<T>> get copyWith =>
+      __$$NoNumberCopyWithImpl<T, _$NoNumber<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -737,6 +834,18 @@ class _$NoNumber<T> implements NoNumber<T> {
     required TResult Function(String? failedValue) noNumber,
   }) {
     return noNumber(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? failedValue)? invalidEmail,
+    TResult Function(String? failedValue)? shortPassword,
+    TResult Function(String? failedValue)? noSpecialSymbol,
+    TResult Function(String? failedValue)? noUpperCase,
+    TResult Function(String? failedValue)? noNumber,
+  }) {
+    return noNumber?.call(failedValue);
   }
 
   @override
@@ -769,6 +878,18 @@ class _$NoNumber<T> implements NoNumber<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(NoSpecialSymbol<T> value)? noSpecialSymbol,
+    TResult Function(NoUpperCase<T> value)? noUpperCase,
+    TResult Function(NoNumber<T> value)? noNumber,
+  }) {
+    return noNumber?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -785,12 +906,13 @@ class _$NoNumber<T> implements NoNumber<T> {
 }
 
 abstract class NoNumber<T> implements AuthValueFailures<T> {
-  const factory NoNumber({required String? failedValue}) = _$NoNumber<T>;
+  const factory NoNumber({required final String? failedValue}) = _$NoNumber<T>;
 
   @override
-  String? get failedValue => throw _privateConstructorUsedError;
+  String? get failedValue;
+
   @override
   @JsonKey(ignore: true)
-  $NoNumberCopyWith<T, NoNumber<T>> get copyWith =>
+  _$$NoNumberCopyWith<T, _$NoNumber<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
