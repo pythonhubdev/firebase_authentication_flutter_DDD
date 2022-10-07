@@ -14,7 +14,7 @@ dependencies:
   cupertino_icons: ^1.0.5
   dartz: ^0.10.1
   firebase_auth: ^3.10.0
-  firebase_core: ^1.23.0
+  firebase_core: ^1.24.0
   flutter:
     sdk: flutter
   flutter_hooks: ^0.18.5+1
