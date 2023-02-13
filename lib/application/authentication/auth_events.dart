@@ -1,6 +1,6 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import "package:freezed_annotation/freezed_annotation.dart";
 
-part 'auth_events.freezed.dart';
+part "auth_events.freezed.dart";
 
 @freezed
 class AuthEvents with _$AuthEvents {

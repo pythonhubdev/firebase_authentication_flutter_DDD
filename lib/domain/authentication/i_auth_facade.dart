@@ -1,7 +1,7 @@
-import 'package:dartz/dartz.dart';
+import "package:dartz/dartz.dart";
+import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_failures.dart";
+import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_value_objects.dart";
 
-import 'auth_failures.dart';
-import 'auth_value_objects.dart';
 
 abstract class IAuthFacade {
   Future<Either<AuthFailures, Unit>> registerWithEmailAndPassword(

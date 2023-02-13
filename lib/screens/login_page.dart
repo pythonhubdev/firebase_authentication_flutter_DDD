@@ -1,15 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth_flutter_ddd/Screens/home_page.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import "package:firebase_auth/firebase_auth.dart";
+import "package:firebase_auth_flutter_ddd/Screens/home_page.dart";
+import "package:flutter/cupertino.dart";
+import "package:flutter/material.dart";
+import "package:hooks_riverpod/hooks_riverpod.dart";
 
-import '../Application/Authentication/auth_events.dart';
-import '../Application/Authentication/auth_state_controller.dart';
-import '../Application/Authentication/auth_states.dart';
-import '../Services/Authentication/firebase_auth_facade.dart';
-import 'Utils/custom_snackbar.dart';
+import "../Application/Authentication/auth_events.dart";
+import "../Application/Authentication/auth_state_controller.dart";
+import "../Application/Authentication/auth_states.dart";
+import "../Services/Authentication/firebase_auth_facade.dart";
+import "Utils/custom_snackbar.dart";
 
 final loginProvider =
     StateNotifierProvider.autoDispose<AuthStateController, AuthStates>((ref) {
@@ -38,17 +37,17 @@ class LoginPage extends HookConsumerWidget {
                 icon: Icons.warning_rounded,
                 content: Text(
                   failure.maybeMap(
-                      orElse: () => '',
-                      emailAlreadyInUse: (value) => 'User already exists',
+                      orElse: () => "",
+                      emailAlreadyInUse: (value) => "User already exists",
                       serverError: (value) {
-                        return 'Server error occurred';
+                        return "Server error occurred";
                       },
                       invalidEmailAndPasswordCombination: (value) {
-                        return 'Invalid email or password';
+                        return "Invalid email or password";
                       }),
                   style: Theme.of(context)
                       .textTheme
-                      .headline5!
+                      .headlineSmall!
                       .copyWith(color: Colors.white),
                 ));
           },
@@ -58,16 +57,16 @@ class LoginPage extends HookConsumerWidget {
                 flashBackground: Colors.green,
                 icon: CupertinoIcons.check_mark_circled_solid,
                 content: Text(
-                  'Login successful',
+                  "Login successful",
                   style: Theme.of(context)
                       .textTheme
-                      .headline5!
+                      .headlineSmall!
                       .copyWith(color: Colors.white),
                 ));
             Navigator.push<Widget>(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => HomePage(),
+                  builder: (context) => const HomePage(),
                 ));
           },
         ),
@@ -80,7 +79,7 @@ class LoginPage extends HookConsumerWidget {
         },
         child: Scaffold(
           appBar: AppBar(
-            title: const Text('Login'),
+            title: const Text("Login"),
           ),
           body: SizedBox.expand(
             child: Form(
@@ -93,8 +92,8 @@ class LoginPage extends HookConsumerWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Welcome !',
-                        style: Theme.of(context).textTheme.headline2,
+                        "Welcome !",
+                        style: Theme.of(context).textTheme.displayMedium,
                       ),
                       const SizedBox(
                         height: 50,
@@ -107,14 +106,14 @@ class LoginPage extends HookConsumerWidget {
                             formStates.emailAddress.valueObject!.fold(
                           (failure) => failure.maybeMap(
                               orElse: () => null,
-                              invalidEmail: (value) => 'Invalid email'),
+                              invalidEmail: (value) => "Invalid email"),
                           (r) => null,
                         ),
                         textInputAction: TextInputAction.next,
                         onEditingComplete: () =>
                             FocusScope.of(context).nextFocus(),
                         decoration: const InputDecoration(
-                            labelText: 'Email Address',
+                            labelText: "Email Address",
                             border: OutlineInputBorder()),
                       ),
                       const SizedBox(
@@ -129,12 +128,12 @@ class LoginPage extends HookConsumerWidget {
                             formStates.password.valueObject!.fold(
                           (failure) => failure.maybeMap(
                             orElse: () => null,
-                            shortPassword: (value) => 'Very short password',
+                            shortPassword: (value) => "Very short password",
                             noUpperCase: (value) =>
-                                'Must contain an uppercase character',
-                            noNumber: (value) => 'Must contain a number',
+                                "Must contain an uppercase character",
+                            noNumber: (value) => "Must contain a number",
                             noSpecialSymbol: (value) =>
-                                'Must contain a special character',
+                                "Must contain a special character",
                           ),
                           (r) => null,
                         ),
@@ -144,7 +143,7 @@ class LoginPage extends HookConsumerWidget {
                         ),
                         obscureText: true,
                         decoration: const InputDecoration(
-                            labelText: 'Password',
+                            labelText: "Password",
                             border: OutlineInputBorder()),
                       ),
                       const SizedBox(
@@ -158,7 +157,7 @@ class LoginPage extends HookConsumerWidget {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     textStyle:
-                                        Theme.of(context).textTheme.headline6),
+                                        Theme.of(context).textTheme.titleLarge),
                                 onPressed: () {
                                   if (formKey.currentState!.validate()) {
                                     formEvents.mapEventsToStates(
@@ -167,7 +166,7 @@ class LoginPage extends HookConsumerWidget {
                                     );
                                   }
                                 },
-                                child: const Text('Login'),
+                                child: const Text("Login"),
                               ),
                             ),
                           ),
@@ -180,7 +179,7 @@ class LoginPage extends HookConsumerWidget {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     textStyle:
-                                        Theme.of(context).textTheme.headline6),
+                                        Theme.of(context).textTheme.titleLarge),
                                 onPressed: () {
                                   if (formKey.currentState!.validate()) {
                                     formEvents.mapEventsToStates(
@@ -189,7 +188,7 @@ class LoginPage extends HookConsumerWidget {
                                     );
                                   }
                                 },
-                                child: const Text('Sign Up'),
+                                child: const Text("Sign Up"),
                               ),
                             ),
                           ),

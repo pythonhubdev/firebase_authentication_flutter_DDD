@@ -1,11 +1,11 @@
-import 'package:dartz/dartz.dart';
-import 'package:firebase_auth_flutter_ddd/Domain/Authentication/auth_failures.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import "package:dartz/dartz.dart";
+import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_failures.dart";
+import "package:flutter_riverpod/flutter_riverpod.dart";
 
-import '../../Domain/Authentication/auth_value_objects.dart';
-import '../../Domain/Authentication/i_auth_facade.dart';
-import 'auth_events.dart';
-import 'auth_states.dart';
+import "../../Domain/Authentication/auth_value_objects.dart";
+import "../../Domain/Authentication/i_auth_facade.dart";
+import "auth_events.dart";
+import "auth_states.dart";
 
 class AuthStateController extends StateNotifier<AuthStates> {
   AuthStateController(this._authFacade) : super(AuthStates.initial());
@@ -20,6 +20,7 @@ class AuthStateController extends StateNotifier<AuthStates> {
               email: value.email,
             ),
             authFailureOrSuccess: none());
+        return null;
       },
       passwordChanged: (value) async {
         state = state.copyWith(
@@ -28,16 +29,19 @@ class AuthStateController extends StateNotifier<AuthStates> {
           ),
           authFailureOrSuccess: none(),
         );
+        return null;
       },
       signUpWithEmailAndPasswordPressed: (value) async {
         await _performAuthAction(
           _authFacade.registerWithEmailAndPassword,
         );
+        return null;
       },
       signInWithEmailAndPasswordPressed: (value) async {
         await _performAuthAction(
           _authFacade.signInWithEmailAndPassword,
         );
+        return null;
       },
     );
   }
