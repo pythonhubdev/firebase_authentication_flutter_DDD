@@ -1,8 +1,7 @@
-import 'package:dartz/dartz.dart';
-
-import '../Core/value_object.dart';
-import 'auth_value_failures.dart';
-import 'auth_value_validators.dart';
+import "package:dartz/dartz.dart";
+import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_value_failures.dart";
+import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_value_validators.dart";
+import "package:firebase_auth_flutter_ddd/Domain/Core/value_object.dart";
 
 class EmailAddress extends ValueObject<String> {
   factory EmailAddress({String? email}) {

@@ -1,6 +1,6 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import "package:freezed_annotation/freezed_annotation.dart";
 
-part 'auth_failures.freezed.dart';
+part "auth_failures.freezed.dart";
 
 @freezed
 class AuthFailures with _$AuthFailures {

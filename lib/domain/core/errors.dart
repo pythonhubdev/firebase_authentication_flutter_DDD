@@ -1,4 +1,4 @@
-import '../Authentication/auth_value_failures.dart';
+import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_value_failures.dart";
 
 class UnExpectedValueError extends Error {
   UnExpectedValueError(this.authValueFailures);
@@ -8,6 +8,6 @@ class UnExpectedValueError extends Error {
   @override
   String toString() {
     return Error.safeToString(
-        'UnExpectedValueError{authValueFailures: $authValueFailures}');
+        "UnExpectedValueError{authValueFailures: $authValueFailures}");
   }
 }

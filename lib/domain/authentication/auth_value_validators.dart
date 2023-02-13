@@ -1,5 +1,5 @@
-import 'package:dartz/dartz.dart';
-import 'auth_value_failures.dart';
+import "package:dartz/dartz.dart";
+import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_value_failures.dart";
 
 Either<AuthValueFailures<String>, String> validateEmailAddress({
   required String? email,
@@ -20,8 +20,8 @@ Either<AuthValueFailures<String>, String> validatePassword({
   required String? password,
 }) {
   final hasMinLength = password!.length > 6;
-  final hasUppercase = password.contains(RegExp('[A-Z]'));
-  final hasDigits = password.contains(RegExp('[0-9]'));
+  final hasUppercase = password.contains(RegExp("[A-Z]"));
+  final hasDigits = password.contains(RegExp("[0-9]"));
   final hasSpecialCharacters =
       password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
   if (!hasMinLength) {

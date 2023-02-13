@@ -1,10 +1,10 @@
-import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import "package:dartz/dartz.dart";
+import "package:firebase_auth/firebase_auth.dart";
 
-import '../../Domain/Authentication/auth_failures.dart';
-import '../../Domain/Authentication/auth_value_objects.dart';
-import '../../Domain/Authentication/i_auth_facade.dart';
-import '../../Domain/Core/errors.dart';
+import "../../Domain/Authentication/auth_failures.dart";
+import "../../Domain/Authentication/auth_value_objects.dart";
+import "../../Domain/Authentication/i_auth_facade.dart";
+import "../../Domain/Core/errors.dart";
 
 class FirebaseAuthFacade implements IAuthFacade {
   FirebaseAuthFacade(this._firebaseAuth);
@@ -24,7 +24,7 @@ class FirebaseAuthFacade implements IAuthFacade {
           email: emailAddressString, password: passwordString);
       return right(unit);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'email-already-in-use') {
+      if (e.code == "email-already-in-use") {
         return left(const AuthFailures.emailAlreadyInUse());
       } else {
         return left(const AuthFailures.serverError());
@@ -45,7 +45,7 @@ class FirebaseAuthFacade implements IAuthFacade {
           email: emailAddressString, password: passwordString);
       return right(unit);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'wrong-password' || e.code == 'user-not-found') {
+      if (e.code == "wrong-password" || e.code == "user-not-found") {
         return left(const AuthFailures.invalidEmailAndPasswordCombination());
       } else {
         return left(const AuthFailures.serverError());

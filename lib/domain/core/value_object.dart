@@ -1,7 +1,7 @@
-import 'package:dartz/dartz.dart';
-import 'package:flutter/cupertino.dart';
+import "package:dartz/dartz.dart";
+import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_value_failures.dart";
+import "package:flutter/cupertino.dart";
 
-import '../Authentication/auth_value_failures.dart';
 
 @immutable
 abstract class ValueObject<T> {
@@ -21,6 +21,6 @@ abstract class ValueObject<T> {
 
   @override
   String toString() {
-    return 'AuthValueObjects{$valueObject}';
+    return "AuthValueObjects{$valueObject}";
   }
 }
