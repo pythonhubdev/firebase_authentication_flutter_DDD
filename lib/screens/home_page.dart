@@ -9,9 +9,15 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Welcome"),
+          elevation: 5,
+          centerTitle: false,
+          titleTextStyle: const TextStyle(fontSize: 25, color: Colors.black),
         ),
-        body: const Center(
-          child: Text("Home Page"),
+        body: Center(
+          child: Text(
+            "Home Page",
+            style: Theme.of(context).textTheme.displayMedium,
+          ),
         ),
       ),
     );

@@ -48,3 +48,5 @@ app.*.map.json
 
 .idea
 .dart_tool
+
+ios/firebase_app_id_file.json

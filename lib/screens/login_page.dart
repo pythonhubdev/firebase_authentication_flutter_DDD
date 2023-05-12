@@ -80,6 +80,16 @@ class LoginPage extends HookConsumerWidget {
         child: Scaffold(
           appBar: AppBar(
             title: const Text("Login"),
+            elevation: 5,
+            leading: const Icon(
+              Icons.login_rounded,
+              size: 25,
+            ),
+            titleTextStyle: const TextStyle(
+              color: Colors.black,
+              fontSize: 25,
+            ),
+            centerTitle: false,
           ),
           body: SizedBox.expand(
             child: Form(
@@ -95,8 +105,15 @@ class LoginPage extends HookConsumerWidget {
                         "Welcome !",
                         style: Theme.of(context).textTheme.displayMedium,
                       ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Text(
+                          "Login or Signup to continue",
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                      ),
                       const SizedBox(
-                        height: 50,
+                        height: 40,
                       ),
                       TextFormField(
                         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -113,8 +130,9 @@ class LoginPage extends HookConsumerWidget {
                         onEditingComplete: () =>
                             FocusScope.of(context).nextFocus(),
                         decoration: const InputDecoration(
-                            labelText: "Email Address",
-                            border: OutlineInputBorder()),
+                          labelText: "Email Address",
+                          border: OutlineInputBorder(),
+                        ),
                       ),
                       const SizedBox(
                         height: 15,
@@ -143,8 +161,9 @@ class LoginPage extends HookConsumerWidget {
                         ),
                         obscureText: true,
                         decoration: const InputDecoration(
-                            labelText: "Password",
-                            border: OutlineInputBorder()),
+                          labelText: "Password",
+                          border: OutlineInputBorder(),
+                        ),
                       ),
                       const SizedBox(
                         height: 20,
@@ -157,7 +176,10 @@ class LoginPage extends HookConsumerWidget {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     textStyle:
-                                        Theme.of(context).textTheme.titleLarge),
+                                        Theme.of(context).textTheme.titleLarge,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(12))),
                                 onPressed: () {
                                   if (formKey.currentState!.validate()) {
                                     formEvents.mapEventsToStates(
@@ -178,8 +200,12 @@ class LoginPage extends HookConsumerWidget {
                               height: 55,
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    textStyle:
-                                        Theme.of(context).textTheme.titleLarge),
+                                  textStyle:
+                                      Theme.of(context).textTheme.titleLarge,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(12)
+                                    )
+                                ),
                                 onPressed: () {
                                   if (formKey.currentState!.validate()) {
                                     formEvents.mapEventsToStates(
