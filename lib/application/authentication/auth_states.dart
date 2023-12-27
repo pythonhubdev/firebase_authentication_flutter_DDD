@@ -1,4 +1,4 @@
-import "package:dartz/dartz.dart";
+import "package:fpdart/fpdart.dart";
 import "package:freezed_annotation/freezed_annotation.dart";
 
 import "../../Domain/Authentication/auth_failures.dart";

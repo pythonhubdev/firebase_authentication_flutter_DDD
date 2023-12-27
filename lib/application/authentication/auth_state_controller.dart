@@ -1,6 +1,6 @@
-import "package:dartz/dartz.dart";
 import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_failures.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
+import "package:fpdart/fpdart.dart";
 
 import "../../Domain/Authentication/auth_value_objects.dart";
 import "../../Domain/Authentication/i_auth_facade.dart";

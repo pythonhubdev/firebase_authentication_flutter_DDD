@@ -1,5 +1,5 @@
-import "package:dartz/dartz.dart";
 import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_value_failures.dart";
+import "package:fpdart/fpdart.dart";
 
 Either<AuthValueFailures<String>, String> validateEmailAddress({
   required String? email,

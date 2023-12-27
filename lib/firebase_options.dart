@@ -50,20 +50,21 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: "AIzaSyDOD6TlAz2n7D4byEzmtd_D9iNWbR9ZUBw",
-    appId: "1:164271849015:android:b302c1fe81c737689989b2",
-    messagingSenderId: "164271849015",
-    projectId: "flutter-firebase-auth-ddd",
-    storageBucket: "flutter-firebase-auth-ddd.appspot.com",
+    apiKey: "AIzaSyBZMVnawoT-EeCyymhzl8DvSOC_xVGXbqY",
+    appId: "1:846249838909:android:c59123c52149d476345d54",
+    messagingSenderId: "846249838909",
+    projectId: "edu-app-4717e",
+    storageBucket: "edu-app-4717e.appspot.com",
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: "AIzaSyB6MdNKXwyhhr5L7LalmSAKsEf2oig4Iq8",
-    appId: "1:164271849015:ios:4b2a2328eb49abbb9989b2",
-    messagingSenderId: "164271849015",
-    projectId: "flutter-firebase-auth-ddd",
-    storageBucket: "flutter-firebase-auth-ddd.appspot.com",
-    iosClientId: "164271849015-cr8gn1mqfdqcikmba6nk2323eh8jm2tl.apps.googleusercontent.com",
+    apiKey: "AIzaSyDbWt27RbXb_0zUq3v6hf6Gdr_ghQHn0Vg",
+    appId: "1:846249838909:ios:8d8b184cfaac3a32345d54",
+    messagingSenderId: "846249838909",
+    projectId: "edu-app-4717e",
+    storageBucket: "edu-app-4717e.appspot.com",
+    androidClientId: "846249838909-jve30eor0thvaq7jdfl59gdikdiukj3r.apps.googleusercontent.com",
+    iosClientId: "846249838909-ipe51fptev2i57sunfjn6a0can051t49.apps.googleusercontent.com",
     iosBundleId: "dev.pythonhub.firebaseAuthFlutterDdd",
   );
 }

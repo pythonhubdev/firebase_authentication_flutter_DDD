@@ -1,6 +1,6 @@
-import "package:dartz/dartz.dart";
 import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_value_failures.dart";
 import "package:flutter/cupertino.dart";
+import "package:fpdart/fpdart.dart";
 
 
 @immutable

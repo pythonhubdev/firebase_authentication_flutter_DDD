@@ -1,5 +1,5 @@
-import "package:dartz/dartz.dart";
 import "package:firebase_auth/firebase_auth.dart";
+import "package:fpdart/fpdart.dart";
 
 import "../../Domain/Authentication/auth_failures.dart";
 import "../../Domain/Authentication/auth_value_objects.dart";
@@ -16,9 +16,9 @@ class FirebaseAuthFacade implements IAuthFacade {
       {required EmailAddress? emailAddress,
       required Password? password}) async {
     final emailAddressString = emailAddress!.valueObject!
-        .fold((l) => throw UnExpectedValueError(l), id);
+        .fold((l) => throw UnExpectedValueError(l), (r) => r);
     final passwordString =
-        password!.valueObject!.fold((l) => throw UnExpectedValueError(l), id);
+        password!.valueObject!.fold((l) => throw UnExpectedValueError(l), (r) => r);
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
           email: emailAddressString, password: passwordString);
@@ -37,9 +37,9 @@ class FirebaseAuthFacade implements IAuthFacade {
       {required EmailAddress? emailAddress,
       required Password? password}) async {
     final emailAddressString = emailAddress!.valueObject!
-        .fold((l) => throw UnExpectedValueError(l), id);
+        .fold((l) => throw UnExpectedValueError(l), (r) => r);
     final passwordString =
-        password!.valueObject!.fold((l) => throw UnExpectedValueError(l), id);
+        password!.valueObject!.fold((l) => throw UnExpectedValueError(l), (r) => r);
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: emailAddressString, password: passwordString);

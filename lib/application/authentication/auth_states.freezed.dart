@@ -87,11 +87,11 @@ class _$AuthStatesCopyWithImpl<$Res, $Val extends AuthStates>
 }
 
 /// @nodoc
-abstract class _$$_AuthStatesCopyWith<$Res>
+abstract class _$$AuthStatesImplCopyWith<$Res>
     implements $AuthStatesCopyWith<$Res> {
-  factory _$$_AuthStatesCopyWith(
-          _$_AuthStates value, $Res Function(_$_AuthStates) then) =
-      __$$_AuthStatesCopyWithImpl<$Res>;
+  factory _$$AuthStatesImplCopyWith(
+          _$AuthStatesImpl value, $Res Function(_$AuthStatesImpl) then) =
+      __$$AuthStatesImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,11 +103,11 @@ abstract class _$$_AuthStatesCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AuthStatesCopyWithImpl<$Res>
-    extends _$AuthStatesCopyWithImpl<$Res, _$_AuthStates>
-    implements _$$_AuthStatesCopyWith<$Res> {
-  __$$_AuthStatesCopyWithImpl(
-      _$_AuthStates _value, $Res Function(_$_AuthStates) _then)
+class __$$AuthStatesImplCopyWithImpl<$Res>
+    extends _$AuthStatesCopyWithImpl<$Res, _$AuthStatesImpl>
+    implements _$$AuthStatesImplCopyWith<$Res> {
+  __$$AuthStatesImplCopyWithImpl(
+      _$AuthStatesImpl _value, $Res Function(_$AuthStatesImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,7 +119,7 @@ class __$$_AuthStatesCopyWithImpl<$Res>
     Object? showError = null,
     Object? authFailureOrSuccess = null,
   }) {
-    return _then(_$_AuthStates(
+    return _then(_$AuthStatesImpl(
       emailAddress: freezed == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
@@ -146,8 +146,8 @@ class __$$_AuthStatesCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AuthStates implements _AuthStates {
-  const _$_AuthStates(
+class _$AuthStatesImpl implements _AuthStates {
+  const _$AuthStatesImpl(
       {required this.emailAddress,
       required this.password,
       required this.isSubmitting,
@@ -174,7 +174,7 @@ class _$_AuthStates implements _AuthStates {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AuthStates &&
+            other is _$AuthStatesImpl &&
             const DeepCollectionEquality()
                 .equals(other.emailAddress, emailAddress) &&
             const DeepCollectionEquality().equals(other.password, password) &&
@@ -198,8 +198,8 @@ class _$_AuthStates implements _AuthStates {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AuthStatesCopyWith<_$_AuthStates> get copyWith =>
-      __$$_AuthStatesCopyWithImpl<_$_AuthStates>(this, _$identity);
+  _$$AuthStatesImplCopyWith<_$AuthStatesImpl> get copyWith =>
+      __$$AuthStatesImplCopyWithImpl<_$AuthStatesImpl>(this, _$identity);
 }
 
 abstract class _AuthStates implements AuthStates {
@@ -209,7 +209,7 @@ abstract class _AuthStates implements AuthStates {
       required final bool isSubmitting,
       required final bool showError,
       required final Option<Either<AuthFailures, Unit>>
-          authFailureOrSuccess}) = _$_AuthStates;
+          authFailureOrSuccess}) = _$AuthStatesImpl;
 
   @override
   EmailAddress get emailAddress;
@@ -223,6 +223,6 @@ abstract class _AuthStates implements AuthStates {
   Option<Either<AuthFailures, Unit>> get authFailureOrSuccess;
   @override
   @JsonKey(ignore: true)
-  _$$_AuthStatesCopyWith<_$_AuthStates> get copyWith =>
+  _$$AuthStatesImplCopyWith<_$AuthStatesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

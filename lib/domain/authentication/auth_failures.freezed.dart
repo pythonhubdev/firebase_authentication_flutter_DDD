@@ -84,25 +84,25 @@ class _$AuthFailuresCopyWithImpl<$Res, $Val extends AuthFailures>
 }
 
 /// @nodoc
-abstract class _$$ServerErrorCopyWith<$Res> {
-  factory _$$ServerErrorCopyWith(
-          _$ServerError value, $Res Function(_$ServerError) then) =
-      __$$ServerErrorCopyWithImpl<$Res>;
+abstract class _$$ServerErrorImplCopyWith<$Res> {
+  factory _$$ServerErrorImplCopyWith(
+          _$ServerErrorImpl value, $Res Function(_$ServerErrorImpl) then) =
+      __$$ServerErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ServerErrorCopyWithImpl<$Res>
-    extends _$AuthFailuresCopyWithImpl<$Res, _$ServerError>
-    implements _$$ServerErrorCopyWith<$Res> {
-  __$$ServerErrorCopyWithImpl(
-      _$ServerError _value, $Res Function(_$ServerError) _then)
+class __$$ServerErrorImplCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res, _$ServerErrorImpl>
+    implements _$$ServerErrorImplCopyWith<$Res> {
+  __$$ServerErrorImplCopyWithImpl(
+      _$ServerErrorImpl _value, $Res Function(_$ServerErrorImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ServerError implements ServerError {
-  const _$ServerError();
+class _$ServerErrorImpl implements ServerError {
+  const _$ServerErrorImpl();
 
   @override
   String toString() {
@@ -112,7 +112,7 @@ class _$ServerError implements ServerError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ServerError);
+        (other.runtimeType == runtimeType && other is _$ServerErrorImpl);
   }
 
   @override
@@ -191,29 +191,29 @@ class _$ServerError implements ServerError {
 }
 
 abstract class ServerError implements AuthFailures {
-  const factory ServerError() = _$ServerError;
+  const factory ServerError() = _$ServerErrorImpl;
 }
 
 /// @nodoc
-abstract class _$$EmailAlreadyInUseCopyWith<$Res> {
-  factory _$$EmailAlreadyInUseCopyWith(
-          _$EmailAlreadyInUse value, $Res Function(_$EmailAlreadyInUse) then) =
-      __$$EmailAlreadyInUseCopyWithImpl<$Res>;
+abstract class _$$EmailAlreadyInUseImplCopyWith<$Res> {
+  factory _$$EmailAlreadyInUseImplCopyWith(_$EmailAlreadyInUseImpl value,
+          $Res Function(_$EmailAlreadyInUseImpl) then) =
+      __$$EmailAlreadyInUseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EmailAlreadyInUseCopyWithImpl<$Res>
-    extends _$AuthFailuresCopyWithImpl<$Res, _$EmailAlreadyInUse>
-    implements _$$EmailAlreadyInUseCopyWith<$Res> {
-  __$$EmailAlreadyInUseCopyWithImpl(
-      _$EmailAlreadyInUse _value, $Res Function(_$EmailAlreadyInUse) _then)
+class __$$EmailAlreadyInUseImplCopyWithImpl<$Res>
+    extends _$AuthFailuresCopyWithImpl<$Res, _$EmailAlreadyInUseImpl>
+    implements _$$EmailAlreadyInUseImplCopyWith<$Res> {
+  __$$EmailAlreadyInUseImplCopyWithImpl(_$EmailAlreadyInUseImpl _value,
+      $Res Function(_$EmailAlreadyInUseImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EmailAlreadyInUse implements EmailAlreadyInUse {
-  const _$EmailAlreadyInUse();
+class _$EmailAlreadyInUseImpl implements EmailAlreadyInUse {
+  const _$EmailAlreadyInUseImpl();
 
   @override
   String toString() {
@@ -223,7 +223,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EmailAlreadyInUse);
+        (other.runtimeType == runtimeType && other is _$EmailAlreadyInUseImpl);
   }
 
   @override
@@ -302,33 +302,33 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
 }
 
 abstract class EmailAlreadyInUse implements AuthFailures {
-  const factory EmailAlreadyInUse() = _$EmailAlreadyInUse;
+  const factory EmailAlreadyInUse() = _$EmailAlreadyInUseImpl;
 }
 
 /// @nodoc
-abstract class _$$InavalidEmailAndPasswordCombinationCopyWith<$Res> {
-  factory _$$InavalidEmailAndPasswordCombinationCopyWith(
-          _$InavalidEmailAndPasswordCombination value,
-          $Res Function(_$InavalidEmailAndPasswordCombination) then) =
-      __$$InavalidEmailAndPasswordCombinationCopyWithImpl<$Res>;
+abstract class _$$InavalidEmailAndPasswordCombinationImplCopyWith<$Res> {
+  factory _$$InavalidEmailAndPasswordCombinationImplCopyWith(
+          _$InavalidEmailAndPasswordCombinationImpl value,
+          $Res Function(_$InavalidEmailAndPasswordCombinationImpl) then) =
+      __$$InavalidEmailAndPasswordCombinationImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InavalidEmailAndPasswordCombinationCopyWithImpl<$Res>
+class __$$InavalidEmailAndPasswordCombinationImplCopyWithImpl<$Res>
     extends _$AuthFailuresCopyWithImpl<$Res,
-        _$InavalidEmailAndPasswordCombination>
-    implements _$$InavalidEmailAndPasswordCombinationCopyWith<$Res> {
-  __$$InavalidEmailAndPasswordCombinationCopyWithImpl(
-      _$InavalidEmailAndPasswordCombination _value,
-      $Res Function(_$InavalidEmailAndPasswordCombination) _then)
+        _$InavalidEmailAndPasswordCombinationImpl>
+    implements _$$InavalidEmailAndPasswordCombinationImplCopyWith<$Res> {
+  __$$InavalidEmailAndPasswordCombinationImplCopyWithImpl(
+      _$InavalidEmailAndPasswordCombinationImpl _value,
+      $Res Function(_$InavalidEmailAndPasswordCombinationImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InavalidEmailAndPasswordCombination
+class _$InavalidEmailAndPasswordCombinationImpl
     implements InavalidEmailAndPasswordCombination {
-  const _$InavalidEmailAndPasswordCombination();
+  const _$InavalidEmailAndPasswordCombinationImpl();
 
   @override
   String toString() {
@@ -339,7 +339,7 @@ class _$InavalidEmailAndPasswordCombination
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InavalidEmailAndPasswordCombination);
+            other is _$InavalidEmailAndPasswordCombinationImpl);
   }
 
   @override
@@ -419,5 +419,5 @@ class _$InavalidEmailAndPasswordCombination
 
 abstract class InavalidEmailAndPasswordCombination implements AuthFailures {
   const factory InavalidEmailAndPasswordCombination() =
-      _$InavalidEmailAndPasswordCombination;
+      _$InavalidEmailAndPasswordCombinationImpl;
 }
