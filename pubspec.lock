@@ -13,10 +13,10 @@ packages:
     dependency: transitive
     description:
       name: _flutterfire_internals
-      sha256: f5628cd9c92ed11083f425fd1f8f1bc60ecdda458c81d73b143aeda036c35fe7
+      sha256: "78f9e0914a5b85de1257a0c1d1af92c4e22f86448133dfc967651ca606a87a82"
       url: "https://pub.dev"
     source: hosted
-    version: "1.3.16"
+    version: "1.3.20"
   analyzer:
     dependency: transitive
     description:
@@ -205,34 +205,34 @@ packages:
     dependency: "direct main"
     description:
       name: firebase_auth
-      sha256: "88f88d541a2c1903c023355e13d077835573a200bbf57e12a6a2c24bf99665a1"
+      sha256: "6dae39ef1a4aba95c160506fa15a6d8545a4dbcffeff80e498a52f4698bbf520"
       url: "https://pub.dev"
     source: hosted
-    version: "4.15.3"
+    version: "4.17.3"
   firebase_auth_platform_interface:
     dependency: transitive
     description:
       name: firebase_auth_platform_interface
-      sha256: "3c9cfaccb7549492edf5b0c67c6dd1c6727c7830891aa6727f2fb225f0226626"
+      sha256: "1e8703687fe7ff78ff8b0c580b6476dca18087eadc6985bc8f578b5739b8e8e3"
       url: "https://pub.dev"
     source: hosted
-    version: "7.0.9"
+    version: "7.1.3"
   firebase_auth_web:
     dependency: transitive
     description:
       name: firebase_auth_web
-      sha256: c09515414c07c11bb133aec4baae9a74c6ff1f62bf05ace54564db82b8c87852
+      sha256: "946069f8c96fb7d0fe46bcfbf1902cfa48c7445beff14a1305e29cae7e00c0f5"
       url: "https://pub.dev"
     source: hosted
-    version: "5.8.12"
+    version: "5.9.3"
   firebase_core:
     dependency: "direct main"
     description:
       name: firebase_core
-      sha256: "96607c0e829a581c2a483c658f04e8b159964c3bae2730f73297070bc85d40bb"
+      sha256: "0b066f2dc196de65f4e57dc851984acba751a7929bffaee69464b3f75e175a5c"
       url: "https://pub.dev"
     source: hosted
-    version: "2.24.2"
+    version: "2.25.3"
   firebase_core_platform_interface:
     dependency: transitive
     description:
@@ -245,10 +245,10 @@ packages:
     dependency: transitive
     description:
       name: firebase_core_web
-      sha256: d585bdf3c656c3f7821ba1bd44da5f13365d22fcecaf5eb75c4295246aaa83c0
+      sha256: df9d4ce37b97ecbe4347fb21887cb61383e3e95f8cf8d6c2de5999ef58e8b312
       url: "https://pub.dev"
     source: hosted
-    version: "2.10.0"
+    version: "2.11.3"
   fixnum:
     dependency: transitive
     description:
