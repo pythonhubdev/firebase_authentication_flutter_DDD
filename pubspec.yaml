@@ -16,7 +16,7 @@ dependencies:
   firebase_core: ^2.28.0
   flutter:
     sdk: flutter
-  flutter_hooks: ^0.21.1-pre.0
+  flutter_hooks: ^0.20.5
   fpdart: ^1.1.0
   freezed_annotation: ^2.4.1
   hooks_riverpod: ^3.0.0-dev.3
@@ -30,10 +30,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-dependency_overrides:
-  flutter_hooks: ^0.21.1-pre.0
-  
 
 
 
