@@ -26,7 +26,7 @@ dev_dependencies:
   flutter_lints: ^3.0.2
   flutter_test:
     sdk: flutter
-  freezed: ^2.5.0
+  freezed: ^2.5.1
 
 flutter:
   uses-material-design: true
