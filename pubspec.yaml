@@ -13,7 +13,7 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.6
   firebase_auth: ^4.19.0
-  firebase_core: ^2.28.0
+  firebase_core: ^2.30.0
   flutter:
     sdk: flutter
   flutter_hooks: ^0.20.5
