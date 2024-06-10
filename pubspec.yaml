@@ -22,7 +22,7 @@ dependencies:
   hooks_riverpod: ^3.0.0-dev.3
 
 dev_dependencies:
-  build_runner: ^2.4.9
+  build_runner: ^2.4.11
   flutter_lints: ^3.0.2
   flutter_test:
     sdk: flutter
