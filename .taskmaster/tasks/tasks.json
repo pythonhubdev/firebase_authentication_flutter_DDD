@@ -1,0 +1,99 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Migrate to Riverpod 3.0",
+        "description": "Update the application to use the latest stable version of Riverpod 3.0. This includes updating the `hooks_riverpod` dependency, refactoring providers and widgets, and ensuring the state management is robust.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": []
+      },
+      {
+        "id": 2,
+        "title": "Modernize the User Interface",
+        "description": "Redesign the login, registration, and home pages to be more modern and visually appealing. Adopt a clean design language like Material You, create a consistent theme, and add animations to enhance the user experience.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Refactor and Clean Up Codebase",
+        "description": "Improve the quality, readability, and maintainability of the codebase. This includes updating all dependencies to their latest stable versions, improving error handling, enhancing input validation, and ensuring the code is well-organized.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Implement Password Reset",
+        "description": "Allow users to reset their passwords if they forget them. This involves creating a 'Forgot Password' screen and integrating with Firebase Authentication's password reset functionality.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Implement Email Verification",
+        "description": "Send a verification email to new users to ensure that they have provided a valid email address. This will help to reduce spam and ensure that users can be reached.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Add Social Logins",
+        "description": "Add support for social logins (e.g., Google, Apple) to provide users with more options for signing in. This will improve the user experience and make it easier for users to get started with the app.",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Create User Profile Page",
+        "description": "Create a user profile page where users can view and edit their information. This will give users more control over their data and allow them to personalize their experience.",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Implement Two-Factor Authentication",
+        "description": "Add an extra layer of security with two-factor authentication. This will help to protect user accounts from unauthorized access.",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [
+          1
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Implement Offline Support",
+        "description": "Cache data locally to provide a seamless experience even when the user is offline. This will improve the user experience and make the app more resilient to network interruptions.",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [
+          1
+        ]
+      }
+    ],
+    "metadata": {
+      "created": "2025-07-21T07:47:36.467Z",
+      "updated": "2025-07-21T10:19:22.468Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

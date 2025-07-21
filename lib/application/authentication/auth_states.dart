@@ -1,13 +1,13 @@
 import "package:fpdart/fpdart.dart";
 import "package:freezed_annotation/freezed_annotation.dart";
 
-import "../../Domain/Authentication/auth_failures.dart";
-import "../../Domain/Authentication/auth_value_objects.dart";
+import "../../domain/authentication/auth_failures.dart";
+import "../../domain/authentication/auth_value_objects.dart";
 
 part "auth_states.freezed.dart";
 
 @freezed
-class AuthStates with _$AuthStates {
+sealed class AuthStates with _$AuthStates {
   const factory AuthStates({
     required EmailAddress emailAddress,
     required Password password,
