@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Delete all local branches that are merged / deleted branches in remote
+
+# Fetch and prune remote branches
+git fetch --prune
+
+# Get the default branch name (either main or master)
+default_branch=$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | cut -d '/' -f 2)
+
+# If default_branch is not found, default to main
+if [ -z "$default_branch" ]; then
+    default_branch="main"
+fi
+
+# Delete local branches that are merged into the default branch
+git branch --merged origin/"$default_branch" | grep -v "^\*" | grep -v "^$default_branch$" | xargs -r git branch -d
+
+# Delete local branches that track deleted remote branches
+git branch -vv | grep ': gone]' | awk '{print $1}' | grep -v "^$default_branch$" | xargs -r git branch -D
+
