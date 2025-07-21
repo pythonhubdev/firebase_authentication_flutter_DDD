@@ -1,11 +1,10 @@
-import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_value_failures.dart";
+import "package:firebase_auth_flutter_ddd/domain/authentication/auth_value_failures.dart";
 import "package:fpdart/fpdart.dart";
 
 Either<AuthValueFailures<String>, String> validateEmailAddress({
   required String? email,
 }) {
-  final emailRegex = RegExp(
-      r'^[a-zA-Z0-9.a-zA-Z0-9.!#$%&"*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+');
+  final emailRegex = RegExp(r'^[a-zA-Z0-9.a-zA-Z0-9.!#$%&"*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+');
 
   if (emailRegex.hasMatch(email!)) {
     return right(email);
@@ -22,8 +21,7 @@ Either<AuthValueFailures<String>, String> validatePassword({
   final hasMinLength = password!.length > 6;
   final hasUppercase = password.contains(RegExp("[A-Z]"));
   final hasDigits = password.contains(RegExp("[0-9]"));
-  final hasSpecialCharacters =
-      password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+  final hasSpecialCharacters = password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
   if (!hasMinLength) {
     return left(
       AuthValueFailures.shortPassword(failedValue: password),

@@ -1,21 +1,12 @@
-import "package:firebase_auth/firebase_auth.dart";
-import "package:firebase_auth_flutter_ddd/Screens/home_page.dart";
+import "package:firebase_auth_flutter_ddd/domain/authentication/auth_failures.dart";
+import "package:firebase_auth_flutter_ddd/screens/home_page.dart";
 import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 import "package:hooks_riverpod/hooks_riverpod.dart";
 
-import "../Application/Authentication/auth_events.dart";
-import "../Application/Authentication/auth_state_controller.dart";
-import "../Application/Authentication/auth_states.dart";
-import "../Services/Authentication/firebase_auth_facade.dart";
-import "Utils/custom_snackbar.dart";
-
-final loginProvider =
-    StateNotifierProvider.autoDispose<AuthStateController, AuthStates>((ref) {
-  final firebaseAuth = FirebaseAuth.instance;
-  final firebaseAuthFacade = FirebaseAuthFacade(firebaseAuth);
-  return AuthStateController(firebaseAuthFacade);
-});
+import "../application/authentication/auth_state_controller.dart";
+import "../application/authentication/auth_states.dart";
+import "utils/custom_snackbar.dart";
 
 class LoginPage extends HookConsumerWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -24,9 +15,10 @@ class LoginPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final formStates = ref.watch(loginProvider);
-    final formEvents = ref.watch(loginProvider.notifier);
-    ref.listen<AuthStates>(loginProvider, (previous, next) {
+    final formStates = ref.watch(authStateControllerProvider);
+    final formNotifier = ref.watch(authStateControllerProvider.notifier);
+
+    ref.listen<AuthStates>(authStateControllerProvider, (previous, next) {
       next.authFailureOrSuccess.fold(
         () {},
         (either) => either.fold(
@@ -45,10 +37,7 @@ class LoginPage extends HookConsumerWidget {
                       invalidEmailAndPasswordCombination: (value) {
                         return "Invalid email or password";
                       }),
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(color: Colors.white),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: Colors.white),
                 ));
           },
           (success) {
@@ -58,10 +47,7 @@ class LoginPage extends HookConsumerWidget {
                 icon: CupertinoIcons.check_mark_circled_solid,
                 content: Text(
                   "Login successful",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(color: Colors.white),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: Colors.white),
                 ));
             Navigator.push<Widget>(
                 context,
@@ -99,135 +85,63 @@ class LoginPage extends HookConsumerWidget {
                   reverse: true,
                   padding: const EdgeInsets.all(20),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text(
-                        "Welcome !",
-                        style: Theme.of(context).textTheme.displayMedium,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: Text(
-                          "Login or Signup to continue",
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
+                      const SizedBox(height: 20),
                       TextFormField(
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
-                        onChanged: (value) => formEvents.mapEventsToStates(
-                            AuthEvents.emailChanged(email: value.toString())),
-                        validator: (value) =>
-                            formStates.emailAddress.valueObject!.fold(
-                          (failure) => failure.maybeMap(
-                              orElse: () => null,
-                              invalidEmail: (value) => "Invalid email"),
-                          (r) => null,
-                        ),
-                        textInputAction: TextInputAction.next,
-                        onEditingComplete: () =>
-                            FocusScope.of(context).nextFocus(),
                         decoration: const InputDecoration(
-                          labelText: "Email Address",
+                          labelText: "Email",
                           border: OutlineInputBorder(),
                         ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Please enter an email";
+                          }
+                          return null;
+                        },
+                        onChanged: (value) {
+                          formNotifier.emailChanged(value);
+                        },
                       ),
-                      const SizedBox(
-                        height: 15,
-                      ),
+                      const SizedBox(height: 20),
                       TextFormField(
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
-                        textInputAction: TextInputAction.done,
-                        onEditingComplete: () =>
-                            FocusScope.of(context).nextFocus(),
-                        validator: (value) =>
-                            formStates.password.valueObject!.fold(
-                          (failure) => failure.maybeMap(
-                            orElse: () => null,
-                            shortPassword: (value) => "Very short password",
-                            noUpperCase: (value) =>
-                                "Must contain an uppercase character",
-                            noNumber: (value) => "Must contain a number",
-                            noSpecialSymbol: (value) =>
-                                "Must contain a special character",
-                          ),
-                          (r) => null,
-                        ),
-                        onChanged: (value) => formEvents.mapEventsToStates(
-                          AuthEvents.passwordChanged(
-                              password: value.toString()),
-                        ),
                         obscureText: true,
                         decoration: const InputDecoration(
                           labelText: "Password",
                           border: OutlineInputBorder(),
                         ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Please enter a password";
+                          }
+                          return null;
+                        },
+                        onChanged: (value) {
+                          formNotifier.passwordChanged(value);
+                        },
                       ),
-                      const SizedBox(
-                        height: 20,
+                      const SizedBox(height: 30),
+                      ElevatedButton(
+                        onPressed: formStates.isSubmitting
+                            ? null
+                            : () async {
+                                if (formKey.currentState!.validate()) {
+                                  await formNotifier.signInWithEmailAndPassword();
+                                }
+                              },
+                        child: formStates.isSubmitting ? const CircularProgressIndicator() : const Text("Sign In"),
                       ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: SizedBox(
-                              height: 55,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    textStyle:
-                                        Theme.of(context).textTheme.titleLarge,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(12))),
-                                onPressed: () {
-                                  if (formKey.currentState!.validate()) {
-                                    formEvents.mapEventsToStates(
-                                      const AuthEvents
-                                          .signInWithEmailAndPasswordPressed(),
-                                    );
-                                  }
-                                },
-                                child: const Text("Login"),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Expanded(
-                            child: SizedBox(
-                              height: 55,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  textStyle:
-                                      Theme.of(context).textTheme.titleLarge,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(12)
-                                    )
-                                ),
-                                onPressed: () {
-                                  if (formKey.currentState!.validate()) {
-                                    formEvents.mapEventsToStates(
-                                      const AuthEvents
-                                          .signUpWithEmailAndPasswordPressed(),
-                                    );
-                                  }
-                                },
-                                child: const Text("Sign Up"),
-                              ),
-                            ),
-                          ),
-                        ],
+                      const SizedBox(height: 10),
+                      ElevatedButton(
+                        onPressed: formStates.isSubmitting
+                            ? null
+                            : () async {
+                                if (formKey.currentState!.validate()) {
+                                  await formNotifier.signUpWithEmailAndPassword();
+                                }
+                              },
+                        child: formStates.isSubmitting ? const CircularProgressIndicator() : const Text("Sign Up"),
                       ),
-                      if (formStates.isSubmitting) ...[
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const LinearProgressIndicator(
-                          minHeight: 6,
-                        )
-                      ]
                     ],
                   ),
                 ),
