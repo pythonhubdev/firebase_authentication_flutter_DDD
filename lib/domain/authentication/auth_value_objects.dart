@@ -1,6 +1,6 @@
-import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_value_failures.dart";
-import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_value_validators.dart";
-import "package:firebase_auth_flutter_ddd/Domain/Core/value_object.dart";
+import "package:firebase_auth_flutter_ddd/domain/authentication/auth_value_failures.dart";
+import "package:firebase_auth_flutter_ddd/domain/authentication/auth_value_validators.dart";
+import "package:firebase_auth_flutter_ddd/domain/core/value_object.dart";
 import "package:fpdart/fpdart.dart";
 
 class EmailAddress extends ValueObject<String> {

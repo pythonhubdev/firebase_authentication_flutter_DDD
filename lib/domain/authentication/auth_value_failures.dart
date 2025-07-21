@@ -4,7 +4,7 @@ import "package:freezed_annotation/freezed_annotation.dart";
 part "auth_value_failures.freezed.dart";
 
 @freezed
-class AuthValueFailures<T> with _$AuthValueFailures<T> {
+sealed class AuthValueFailures<T> with _$AuthValueFailures<T> {
   const factory AuthValueFailures.invalidEmail({required String? failedValue}) =
       InvalidEmail<T>;
 

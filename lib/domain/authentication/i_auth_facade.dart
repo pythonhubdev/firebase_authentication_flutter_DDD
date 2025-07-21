@@ -1,5 +1,5 @@
-import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_failures.dart";
-import "package:firebase_auth_flutter_ddd/Domain/Authentication/auth_value_objects.dart";
+import "package:firebase_auth_flutter_ddd/domain/authentication/auth_failures.dart";
+import "package:firebase_auth_flutter_ddd/domain/authentication/auth_value_objects.dart";
 import "package:fpdart/fpdart.dart";
 
 
