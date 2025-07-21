@@ -16,8 +16,7 @@ T _$identity<T>(T value) => value;
 mixin _$AuthEvents {
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is AuthEvents);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is AuthEvents);
   }
 
   @override
@@ -52,10 +51,8 @@ extension AuthEventsPatterns on AuthEvents {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUPWithEmailAndPasswordPressed value)?
-        signUpWithEmailAndPasswordPressed,
-    TResult Function(SignInWithEmailAndPasswordPressed value)?
-        signInWithEmailAndPasswordPressed,
+    TResult Function(SignUPWithEmailAndPasswordPressed value)? signUpWithEmailAndPasswordPressed,
+    TResult Function(SignInWithEmailAndPasswordPressed value)? signInWithEmailAndPasswordPressed,
     required TResult orElse(),
   }) {
     final _that = this;
@@ -64,11 +61,9 @@ extension AuthEventsPatterns on AuthEvents {
         return emailChanged(_that);
       case PasswordChanged() when passwordChanged != null:
         return passwordChanged(_that);
-      case SignUPWithEmailAndPasswordPressed()
-          when signUpWithEmailAndPasswordPressed != null:
+      case SignUPWithEmailAndPasswordPressed() when signUpWithEmailAndPasswordPressed != null:
         return signUpWithEmailAndPasswordPressed(_that);
-      case SignInWithEmailAndPasswordPressed()
-          when signInWithEmailAndPasswordPressed != null:
+      case SignInWithEmailAndPasswordPressed() when signInWithEmailAndPasswordPressed != null:
         return signInWithEmailAndPasswordPressed(_that);
       case _:
         return orElse();
@@ -92,10 +87,8 @@ extension AuthEventsPatterns on AuthEvents {
   TResult map<TResult extends Object?>({
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(SignUPWithEmailAndPasswordPressed value)
-        signUpWithEmailAndPasswordPressed,
-    required TResult Function(SignInWithEmailAndPasswordPressed value)
-        signInWithEmailAndPasswordPressed,
+    required TResult Function(SignUPWithEmailAndPasswordPressed value) signUpWithEmailAndPasswordPressed,
+    required TResult Function(SignInWithEmailAndPasswordPressed value) signInWithEmailAndPasswordPressed,
   }) {
     final _that = this;
     switch (_that) {
@@ -128,10 +121,8 @@ extension AuthEventsPatterns on AuthEvents {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EmailChanged value)? emailChanged,
     TResult? Function(PasswordChanged value)? passwordChanged,
-    TResult? Function(SignUPWithEmailAndPasswordPressed value)?
-        signUpWithEmailAndPasswordPressed,
-    TResult? Function(SignInWithEmailAndPasswordPressed value)?
-        signInWithEmailAndPasswordPressed,
+    TResult? Function(SignUPWithEmailAndPasswordPressed value)? signUpWithEmailAndPasswordPressed,
+    TResult? Function(SignInWithEmailAndPasswordPressed value)? signInWithEmailAndPasswordPressed,
   }) {
     final _that = this;
     switch (_that) {
@@ -139,11 +130,9 @@ extension AuthEventsPatterns on AuthEvents {
         return emailChanged(_that);
       case PasswordChanged() when passwordChanged != null:
         return passwordChanged(_that);
-      case SignUPWithEmailAndPasswordPressed()
-          when signUpWithEmailAndPasswordPressed != null:
+      case SignUPWithEmailAndPasswordPressed() when signUpWithEmailAndPasswordPressed != null:
         return signUpWithEmailAndPasswordPressed(_that);
-      case SignInWithEmailAndPasswordPressed()
-          when signInWithEmailAndPasswordPressed != null:
+      case SignInWithEmailAndPasswordPressed() when signInWithEmailAndPasswordPressed != null:
         return signInWithEmailAndPasswordPressed(_that);
       case _:
         return null;
@@ -176,11 +165,9 @@ extension AuthEventsPatterns on AuthEvents {
         return emailChanged(_that.email);
       case PasswordChanged() when passwordChanged != null:
         return passwordChanged(_that.password);
-      case SignUPWithEmailAndPasswordPressed()
-          when signUpWithEmailAndPasswordPressed != null:
+      case SignUPWithEmailAndPasswordPressed() when signUpWithEmailAndPasswordPressed != null:
         return signUpWithEmailAndPasswordPressed();
-      case SignInWithEmailAndPasswordPressed()
-          when signInWithEmailAndPasswordPressed != null:
+      case SignInWithEmailAndPasswordPressed() when signInWithEmailAndPasswordPressed != null:
         return signInWithEmailAndPasswordPressed();
       case _:
         return orElse();
@@ -247,11 +234,9 @@ extension AuthEventsPatterns on AuthEvents {
         return emailChanged(_that.email);
       case PasswordChanged() when passwordChanged != null:
         return passwordChanged(_that.password);
-      case SignUPWithEmailAndPasswordPressed()
-          when signUpWithEmailAndPasswordPressed != null:
+      case SignUPWithEmailAndPasswordPressed() when signUpWithEmailAndPasswordPressed != null:
         return signUpWithEmailAndPasswordPressed();
-      case SignInWithEmailAndPasswordPressed()
-          when signInWithEmailAndPasswordPressed != null:
+      case SignInWithEmailAndPasswordPressed() when signInWithEmailAndPasswordPressed != null:
         return signInWithEmailAndPasswordPressed();
       case _:
         return null;
@@ -270,8 +255,7 @@ class EmailChanged implements AuthEvents {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $EmailChangedCopyWith<EmailChanged> get copyWith =>
-      _$EmailChangedCopyWithImpl<EmailChanged>(this, _$identity);
+  $EmailChangedCopyWith<EmailChanged> get copyWith => _$EmailChangedCopyWithImpl<EmailChanged>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
@@ -291,11 +275,8 @@ class EmailChanged implements AuthEvents {
 }
 
 /// @nodoc
-abstract mixin class $EmailChangedCopyWith<$Res>
-    implements $AuthEventsCopyWith<$Res> {
-  factory $EmailChangedCopyWith(
-          EmailChanged value, $Res Function(EmailChanged) _then) =
-      _$EmailChangedCopyWithImpl;
+abstract mixin class $EmailChangedCopyWith<$Res> implements $AuthEventsCopyWith<$Res> {
+  factory $EmailChangedCopyWith(EmailChanged value, $Res Function(EmailChanged) _then) = _$EmailChangedCopyWithImpl;
   @useResult
   $Res call({String? email});
 }
@@ -341,8 +322,7 @@ class PasswordChanged implements AuthEvents {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is PasswordChanged &&
-            (identical(other.password, password) ||
-                other.password == password));
+            (identical(other.password, password) || other.password == password));
   }
 
   @override
@@ -355,18 +335,15 @@ class PasswordChanged implements AuthEvents {
 }
 
 /// @nodoc
-abstract mixin class $PasswordChangedCopyWith<$Res>
-    implements $AuthEventsCopyWith<$Res> {
-  factory $PasswordChangedCopyWith(
-          PasswordChanged value, $Res Function(PasswordChanged) _then) =
+abstract mixin class $PasswordChangedCopyWith<$Res> implements $AuthEventsCopyWith<$Res> {
+  factory $PasswordChangedCopyWith(PasswordChanged value, $Res Function(PasswordChanged) _then) =
       _$PasswordChangedCopyWithImpl;
   @useResult
   $Res call({String? password});
 }
 
 /// @nodoc
-class _$PasswordChangedCopyWithImpl<$Res>
-    implements $PasswordChangedCopyWith<$Res> {
+class _$PasswordChangedCopyWithImpl<$Res> implements $PasswordChangedCopyWith<$Res> {
   _$PasswordChangedCopyWithImpl(this._self, this._then);
 
   final PasswordChanged _self;
@@ -394,9 +371,7 @@ class SignUPWithEmailAndPasswordPressed implements AuthEvents {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is SignUPWithEmailAndPasswordPressed);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is SignUPWithEmailAndPasswordPressed);
   }
 
   @override
@@ -415,9 +390,7 @@ class SignInWithEmailAndPasswordPressed implements AuthEvents {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is SignInWithEmailAndPasswordPressed);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is SignInWithEmailAndPasswordPressed);
   }
 
   @override

@@ -1,6 +1,5 @@
 import "package:firebase_auth_flutter_ddd/core/theme/animated_widgets.dart";
 import "package:firebase_auth_flutter_ddd/domain/authentication/auth_failures.dart";
-import "package:firebase_auth_flutter_ddd/screens/home_page.dart";
 import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
@@ -8,15 +7,16 @@ import "package:hooks_riverpod/hooks_riverpod.dart";
 
 import "../application/authentication/auth_state_controller.dart";
 import "../application/authentication/auth_states.dart";
-import "registration_page.dart";
+import "login_page.dart";
 import "utils/custom_snackbar.dart";
 
-class LoginPage extends HookConsumerWidget {
-  LoginPage({Key? key}) : super(key: key);
+class RegistrationPage extends HookConsumerWidget {
+  RegistrationPage({super.key});
 
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -36,27 +36,27 @@ class LoginPage extends HookConsumerWidget {
                 content: Text(
                   failure.when(
                       serverError: () => "Server error occurred",
-                      emailAlreadyInUse: () => "User already exists",
-                      invalidEmailAndPasswordCombination: () => "Invalid email or password"),
+                      emailAlreadyInUse: () => "This email is already registered",
+                      invalidEmailAndPasswordCombination: () => "Invalid email or password format"),
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.white),
                 ));
           },
           (success) {
-            HapticFeedback.lightImpact(); // Changed from successImpact to lightImpact
+            HapticFeedback.lightImpact(); // Fixed from successImpact
             buildCustomSnackBar(
                 context: context,
                 flashBackground: Theme.of(context).colorScheme.primary,
                 icon: CupertinoIcons.check_mark_circled_solid,
                 content: Text(
-                  "Welcome back! Login successful",
+                  "Account created successfully! Welcome aboard!",
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.white),
                 ));
             Navigator.pushReplacement(
                 context,
                 PageRouteBuilder(
-                  pageBuilder: (context, animation, secondaryAnimation) => const HomePage(),
+                  pageBuilder: (context, animation, secondaryAnimation) => LoginPage(),
                   transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                    const begin = Offset(1.0, 0.0);
+                    const begin = Offset(-1.0, 0.0);
                     const end = Offset.zero;
                     const curve = Curves.easeInOutCubic;
 
@@ -75,7 +75,7 @@ class LoginPage extends HookConsumerWidget {
     });
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface, // Changed from background to surface
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -86,7 +86,25 @@ class LoginPage extends HookConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20),
+
+                  // Back Button
+                  SlideInWidget(
+                    delay: 50,
+                    begin: const Offset(-0.3, 0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: IconButton(
+                        onPressed: () => Navigator.pop(context),
+                        icon: Icon(
+                          Icons.arrow_back_rounded,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 20),
 
                   // Hero Section with Animation
                   SlideInWidget(
@@ -97,26 +115,26 @@ class LoginPage extends HookConsumerWidget {
                           height: 120,
                           width: 120,
                           decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primaryContainer,
+                            color: Theme.of(context).colorScheme.secondaryContainer,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
-                            Icons.login_rounded,
+                            Icons.person_add_rounded,
                             size: 64,
-                            color: Theme.of(context).colorScheme.onPrimaryContainer,
+                            color: Theme.of(context).colorScheme.onSecondaryContainer,
                           ),
                         ),
                         const SizedBox(height: 32),
                         Text(
-                          "Welcome back",
+                          "Create Account",
                           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                                 fontWeight: FontWeight.bold,
-                                color: Theme.of(context).colorScheme.onSurface, // Changed from onBackground
+                                color: Theme.of(context).colorScheme.onSurface,
                               ),
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          "Sign in to your account to continue",
+                          "Join us today and start your journey",
                           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                                 color: Theme.of(context).colorScheme.onSurfaceVariant,
                               ),
@@ -131,7 +149,7 @@ class LoginPage extends HookConsumerWidget {
                   SlideInWidget(
                     delay: 200,
                     child: AnimatedFormField(
-                      label: "Email",
+                      label: "Email Address",
                       hint: "Enter your email address",
                       keyboardType: TextInputType.emailAddress,
                       prefixIcon: Icons.email_outlined,
@@ -141,7 +159,6 @@ class LoginPage extends HookConsumerWidget {
                           return "Please enter your email";
                         }
                         if (!value.contains("@")) {
-                          // Fixed quote usage
                           return "Please enter a valid email";
                         }
                         return null;
@@ -159,14 +176,14 @@ class LoginPage extends HookConsumerWidget {
                     delay: 300,
                     child: AnimatedFormField(
                       label: "Password",
-                      hint: "Enter your password",
+                      hint: "Create a strong password",
                       obscureText: true,
                       // Simplified to always obscure
                       prefixIcon: Icons.lock_outline,
                       controller: passwordController,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return "Please enter your password";
+                          return "Please enter a password";
                         }
                         if (value.length < 6) {
                           return "Password must be at least 6 characters";
@@ -179,21 +196,77 @@ class LoginPage extends HookConsumerWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 32),
+                  const SizedBox(height: 20),
 
-                  // Login Button
+                  // Confirm Password Field - Simplified without showPassword dependency
                   SlideInWidget(
                     delay: 400,
+                    child: AnimatedFormField(
+                      label: "Confirm Password",
+                      hint: "Re-enter your password",
+                      obscureText: true,
+                      // Simplified to always obscure
+                      prefixIcon: Icons.lock_outline,
+                      controller: confirmPasswordController,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please confirm your password";
+                        }
+                        if (value != passwordController.text) {
+                          return "Passwords do not match";
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+
+                  const SizedBox(height: 32),
+
+                  // Terms and Conditions
+                  SlideInWidget(
+                    delay: 500,
+                    child: Card(
+                      color: Theme.of(context).colorScheme.surfaceContainerHigh.withValues(alpha: 0.3),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Icon(
+                              Icons.info_outline_rounded,
+                              color: Theme.of(context).colorScheme.primary,
+                              size: 20,
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Text(
+                                "By creating an account, you agree to our Terms of Service and Privacy Policy.",
+                                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      color: Theme.of(context).colorScheme.onSurfaceVariant,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 32),
+
+                  // Register Button
+                  SlideInWidget(
+                    delay: 600,
                     child: AnimatedButton(
-                      text: "Sign In",
-                      icon: Icons.arrow_forward_rounded,
+                      text: "Create Account",
+                      icon: Icons.person_add_rounded,
                       isLoading: formStates.isSubmitting,
                       onPressed: formStates.isSubmitting
                           ? null
                           : () {
                               if (formKey.currentState!.validate()) {
                                 HapticFeedback.lightImpact();
-                                formNotifier.signInWithEmailAndPassword(); // Fixed method name
+                                formNotifier.signUpWithEmailAndPassword(); // Fixed method name
                               } else {
                                 HapticFeedback.lightImpact();
                               }
@@ -201,38 +274,18 @@ class LoginPage extends HookConsumerWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 24),
-
-                  // Forgot Password
-                  SlideInWidget(
-                    delay: 500,
-                    child: Center(
-                      child: TextButton(
-                        onPressed: () {
-                          // TODO: Navigate to forgot password page
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text("Forgot password feature coming soon!"),
-                            ),
-                          );
-                        },
-                        child: const Text("Forgot your password?"),
-                      ),
-                    ),
-                  ),
-
                   const SizedBox(height: 32),
 
-                  // Register Section
+                  // Login Section
                   SlideInWidget(
-                    delay: 600,
+                    delay: 700,
                     child: Card(
                       child: Padding(
                         padding: const EdgeInsets.all(24),
                         child: Column(
                           children: [
                             Text(
-                              "Don't have an account?",
+                              "Already have an account?",
                               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                                     color: Theme.of(context).colorScheme.onSurfaceVariant,
                                   ),
@@ -240,14 +293,14 @@ class LoginPage extends HookConsumerWidget {
                             const SizedBox(height: 16),
                             SizedBox(
                               width: double.infinity,
-                              child: OutlinedButton(
+                              child: TextButton(
                                 onPressed: () {
-                                  Navigator.push(
+                                  Navigator.pushReplacement(
                                     context,
                                     PageRouteBuilder(
-                                      pageBuilder: (context, animation, secondaryAnimation) => RegistrationPage(),
+                                      pageBuilder: (context, animation, secondaryAnimation) => LoginPage(),
                                       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                                        const begin = Offset(1.0, 0.0);
+                                        const begin = Offset(-1.0, 0.0);
                                         const end = Offset.zero;
                                         const curve = Curves.easeInOutCubic;
 
@@ -262,13 +315,7 @@ class LoginPage extends HookConsumerWidget {
                                     ),
                                   );
                                 },
-                                style: OutlinedButton.styleFrom(
-                                  padding: const EdgeInsets.symmetric(vertical: 16),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16),
-                                  ),
-                                ),
-                                child: const Text("Create Account"),
+                                child: const Text("Sign In Instead"),
                               ),
                             ),
                           ],

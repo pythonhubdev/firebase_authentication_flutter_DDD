@@ -73,8 +73,7 @@ class AuthStateController extends Notifier<AuthStates> {
   }
 
   Future<void> _performAuthAction(
-    Future<Either<AuthFailures, Unit>> Function(
-            {required EmailAddress emailAddress, required Password password})
+    Future<Either<AuthFailures, Unit>> Function({required EmailAddress emailAddress, required Password password})
         forwardCall,
   ) async {
     final isEmailValid = state.emailAddress.isValid();

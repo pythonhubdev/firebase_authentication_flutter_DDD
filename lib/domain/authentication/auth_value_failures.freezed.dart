@@ -21,16 +21,14 @@ mixin _$AuthValueFailures<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $AuthValueFailuresCopyWith<T, AuthValueFailures<T>> get copyWith =>
-      _$AuthValueFailuresCopyWithImpl<T, AuthValueFailures<T>>(
-          this as AuthValueFailures<T>, _$identity);
+      _$AuthValueFailuresCopyWithImpl<T, AuthValueFailures<T>>(this as AuthValueFailures<T>, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AuthValueFailures<T> &&
-            (identical(other.failedValue, failedValue) ||
-                other.failedValue == failedValue));
+            (identical(other.failedValue, failedValue) || other.failedValue == failedValue));
   }
 
   @override
@@ -44,16 +42,15 @@ mixin _$AuthValueFailures<T> {
 
 /// @nodoc
 abstract mixin class $AuthValueFailuresCopyWith<T, $Res> {
-  factory $AuthValueFailuresCopyWith(AuthValueFailures<T> value,
-          $Res Function(AuthValueFailures<T>) _then) =
+  factory $AuthValueFailuresCopyWith(AuthValueFailures<T> value, $Res Function(AuthValueFailures<T>) _then) =
       _$AuthValueFailuresCopyWithImpl;
+
   @useResult
   $Res call({String? failedValue});
 }
 
 /// @nodoc
-class _$AuthValueFailuresCopyWithImpl<T, $Res>
-    implements $AuthValueFailuresCopyWith<T, $Res> {
+class _$AuthValueFailuresCopyWithImpl<T, $Res> implements $AuthValueFailuresCopyWith<T, $Res> {
   _$AuthValueFailuresCopyWithImpl(this._self, this._then);
 
   final AuthValueFailures<T> _self;
@@ -321,8 +318,7 @@ class InvalidEmail<T> implements AuthValueFailures<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is InvalidEmail<T> &&
-            (identical(other.failedValue, failedValue) ||
-                other.failedValue == failedValue));
+            (identical(other.failedValue, failedValue) || other.failedValue == failedValue));
   }
 
   @override
@@ -335,10 +331,8 @@ class InvalidEmail<T> implements AuthValueFailures<T> {
 }
 
 /// @nodoc
-abstract mixin class $InvalidEmailCopyWith<T, $Res>
-    implements $AuthValueFailuresCopyWith<T, $Res> {
-  factory $InvalidEmailCopyWith(
-          InvalidEmail<T> value, $Res Function(InvalidEmail<T>) _then) =
+abstract mixin class $InvalidEmailCopyWith<T, $Res> implements $AuthValueFailuresCopyWith<T, $Res> {
+  factory $InvalidEmailCopyWith(InvalidEmail<T> value, $Res Function(InvalidEmail<T>) _then) =
       _$InvalidEmailCopyWithImpl;
   @override
   @useResult
@@ -346,8 +340,7 @@ abstract mixin class $InvalidEmailCopyWith<T, $Res>
 }
 
 /// @nodoc
-class _$InvalidEmailCopyWithImpl<T, $Res>
-    implements $InvalidEmailCopyWith<T, $Res> {
+class _$InvalidEmailCopyWithImpl<T, $Res> implements $InvalidEmailCopyWith<T, $Res> {
   _$InvalidEmailCopyWithImpl(this._self, this._then);
 
   final InvalidEmail<T> _self;
@@ -390,8 +383,7 @@ class ShortPassword<T> implements AuthValueFailures<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ShortPassword<T> &&
-            (identical(other.failedValue, failedValue) ||
-                other.failedValue == failedValue));
+            (identical(other.failedValue, failedValue) || other.failedValue == failedValue));
   }
 
   @override
@@ -404,10 +396,8 @@ class ShortPassword<T> implements AuthValueFailures<T> {
 }
 
 /// @nodoc
-abstract mixin class $ShortPasswordCopyWith<T, $Res>
-    implements $AuthValueFailuresCopyWith<T, $Res> {
-  factory $ShortPasswordCopyWith(
-          ShortPassword<T> value, $Res Function(ShortPassword<T>) _then) =
+abstract mixin class $ShortPasswordCopyWith<T, $Res> implements $AuthValueFailuresCopyWith<T, $Res> {
+  factory $ShortPasswordCopyWith(ShortPassword<T> value, $Res Function(ShortPassword<T>) _then) =
       _$ShortPasswordCopyWithImpl;
   @override
   @useResult
@@ -415,8 +405,7 @@ abstract mixin class $ShortPasswordCopyWith<T, $Res>
 }
 
 /// @nodoc
-class _$ShortPasswordCopyWithImpl<T, $Res>
-    implements $ShortPasswordCopyWith<T, $Res> {
+class _$ShortPasswordCopyWithImpl<T, $Res> implements $ShortPasswordCopyWith<T, $Res> {
   _$ShortPasswordCopyWithImpl(this._self, this._then);
 
   final ShortPassword<T> _self;
@@ -459,8 +448,7 @@ class NoSpecialSymbol<T> implements AuthValueFailures<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is NoSpecialSymbol<T> &&
-            (identical(other.failedValue, failedValue) ||
-                other.failedValue == failedValue));
+            (identical(other.failedValue, failedValue) || other.failedValue == failedValue));
   }
 
   @override
@@ -473,10 +461,8 @@ class NoSpecialSymbol<T> implements AuthValueFailures<T> {
 }
 
 /// @nodoc
-abstract mixin class $NoSpecialSymbolCopyWith<T, $Res>
-    implements $AuthValueFailuresCopyWith<T, $Res> {
-  factory $NoSpecialSymbolCopyWith(
-          NoSpecialSymbol<T> value, $Res Function(NoSpecialSymbol<T>) _then) =
+abstract mixin class $NoSpecialSymbolCopyWith<T, $Res> implements $AuthValueFailuresCopyWith<T, $Res> {
+  factory $NoSpecialSymbolCopyWith(NoSpecialSymbol<T> value, $Res Function(NoSpecialSymbol<T>) _then) =
       _$NoSpecialSymbolCopyWithImpl;
   @override
   @useResult
@@ -484,8 +470,7 @@ abstract mixin class $NoSpecialSymbolCopyWith<T, $Res>
 }
 
 /// @nodoc
-class _$NoSpecialSymbolCopyWithImpl<T, $Res>
-    implements $NoSpecialSymbolCopyWith<T, $Res> {
+class _$NoSpecialSymbolCopyWithImpl<T, $Res> implements $NoSpecialSymbolCopyWith<T, $Res> {
   _$NoSpecialSymbolCopyWithImpl(this._self, this._then);
 
   final NoSpecialSymbol<T> _self;
@@ -528,8 +513,7 @@ class NoUpperCase<T> implements AuthValueFailures<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is NoUpperCase<T> &&
-            (identical(other.failedValue, failedValue) ||
-                other.failedValue == failedValue));
+            (identical(other.failedValue, failedValue) || other.failedValue == failedValue));
   }
 
   @override
@@ -542,19 +526,15 @@ class NoUpperCase<T> implements AuthValueFailures<T> {
 }
 
 /// @nodoc
-abstract mixin class $NoUpperCaseCopyWith<T, $Res>
-    implements $AuthValueFailuresCopyWith<T, $Res> {
-  factory $NoUpperCaseCopyWith(
-          NoUpperCase<T> value, $Res Function(NoUpperCase<T>) _then) =
-      _$NoUpperCaseCopyWithImpl;
+abstract mixin class $NoUpperCaseCopyWith<T, $Res> implements $AuthValueFailuresCopyWith<T, $Res> {
+  factory $NoUpperCaseCopyWith(NoUpperCase<T> value, $Res Function(NoUpperCase<T>) _then) = _$NoUpperCaseCopyWithImpl;
   @override
   @useResult
   $Res call({String? failedValue});
 }
 
 /// @nodoc
-class _$NoUpperCaseCopyWithImpl<T, $Res>
-    implements $NoUpperCaseCopyWith<T, $Res> {
+class _$NoUpperCaseCopyWithImpl<T, $Res> implements $NoUpperCaseCopyWith<T, $Res> {
   _$NoUpperCaseCopyWithImpl(this._self, this._then);
 
   final NoUpperCase<T> _self;
@@ -589,16 +569,14 @@ class NoNumber<T> implements AuthValueFailures<T> {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $NoNumberCopyWith<T, NoNumber<T>> get copyWith =>
-      _$NoNumberCopyWithImpl<T, NoNumber<T>>(this, _$identity);
+  $NoNumberCopyWith<T, NoNumber<T>> get copyWith => _$NoNumberCopyWithImpl<T, NoNumber<T>>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is NoNumber<T> &&
-            (identical(other.failedValue, failedValue) ||
-                other.failedValue == failedValue));
+            (identical(other.failedValue, failedValue) || other.failedValue == failedValue));
   }
 
   @override
@@ -611,11 +589,8 @@ class NoNumber<T> implements AuthValueFailures<T> {
 }
 
 /// @nodoc
-abstract mixin class $NoNumberCopyWith<T, $Res>
-    implements $AuthValueFailuresCopyWith<T, $Res> {
-  factory $NoNumberCopyWith(
-          NoNumber<T> value, $Res Function(NoNumber<T>) _then) =
-      _$NoNumberCopyWithImpl;
+abstract mixin class $NoNumberCopyWith<T, $Res> implements $AuthValueFailuresCopyWith<T, $Res> {
+  factory $NoNumberCopyWith(NoNumber<T> value, $Res Function(NoNumber<T>) _then) = _$NoNumberCopyWithImpl;
   @override
   @useResult
   $Res call({String? failedValue});
