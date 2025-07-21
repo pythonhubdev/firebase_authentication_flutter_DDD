@@ -51,7 +51,7 @@ extension AuthFailuresPatterns on AuthFailures {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InavalidEmailAndPasswordCombination value)? invalidEmailAndPasswordCombination,
+    TResult Function(InvalidEmailAndPasswordCombination value)? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) {
     final _that = this;
@@ -60,7 +60,7 @@ extension AuthFailuresPatterns on AuthFailures {
         return serverError(_that);
       case EmailAlreadyInUse() when emailAlreadyInUse != null:
         return emailAlreadyInUse(_that);
-      case InavalidEmailAndPasswordCombination() when invalidEmailAndPasswordCombination != null:
+      case InvalidEmailAndPasswordCombination() when invalidEmailAndPasswordCombination != null:
         return invalidEmailAndPasswordCombination(_that);
       case _:
         return orElse();
@@ -84,7 +84,7 @@ extension AuthFailuresPatterns on AuthFailures {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
-    required TResult Function(InavalidEmailAndPasswordCombination value) invalidEmailAndPasswordCombination,
+    required TResult Function(InvalidEmailAndPasswordCombination value) invalidEmailAndPasswordCombination,
   }) {
     final _that = this;
     switch (_that) {
@@ -92,7 +92,7 @@ extension AuthFailuresPatterns on AuthFailures {
         return serverError(_that);
       case EmailAlreadyInUse():
         return emailAlreadyInUse(_that);
-      case InavalidEmailAndPasswordCombination():
+      case InvalidEmailAndPasswordCombination():
         return invalidEmailAndPasswordCombination(_that);
       case _:
         throw StateError('Unexpected subclass');
@@ -115,7 +115,7 @@ extension AuthFailuresPatterns on AuthFailures {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerError value)? serverError,
     TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult? Function(InavalidEmailAndPasswordCombination value)? invalidEmailAndPasswordCombination,
+    TResult? Function(InvalidEmailAndPasswordCombination value)? invalidEmailAndPasswordCombination,
   }) {
     final _that = this;
     switch (_that) {
@@ -123,7 +123,7 @@ extension AuthFailuresPatterns on AuthFailures {
         return serverError(_that);
       case EmailAlreadyInUse() when emailAlreadyInUse != null:
         return emailAlreadyInUse(_that);
-      case InavalidEmailAndPasswordCombination() when invalidEmailAndPasswordCombination != null:
+      case InvalidEmailAndPasswordCombination() when invalidEmailAndPasswordCombination != null:
         return invalidEmailAndPasswordCombination(_that);
       case _:
         return null;
@@ -155,7 +155,7 @@ extension AuthFailuresPatterns on AuthFailures {
         return serverError();
       case EmailAlreadyInUse() when emailAlreadyInUse != null:
         return emailAlreadyInUse();
-      case InavalidEmailAndPasswordCombination() when invalidEmailAndPasswordCombination != null:
+      case InvalidEmailAndPasswordCombination() when invalidEmailAndPasswordCombination != null:
         return invalidEmailAndPasswordCombination();
       case _:
         return orElse();
@@ -187,7 +187,7 @@ extension AuthFailuresPatterns on AuthFailures {
         return serverError();
       case EmailAlreadyInUse():
         return emailAlreadyInUse();
-      case InavalidEmailAndPasswordCombination():
+      case InvalidEmailAndPasswordCombination():
         return invalidEmailAndPasswordCombination();
       case _:
         throw StateError('Unexpected subclass');
@@ -218,7 +218,7 @@ extension AuthFailuresPatterns on AuthFailures {
         return serverError();
       case EmailAlreadyInUse() when emailAlreadyInUse != null:
         return emailAlreadyInUse();
-      case InavalidEmailAndPasswordCombination() when invalidEmailAndPasswordCombination != null:
+      case InvalidEmailAndPasswordCombination() when invalidEmailAndPasswordCombination != null:
         return invalidEmailAndPasswordCombination();
       case _:
         return null;
@@ -266,12 +266,12 @@ class EmailAlreadyInUse implements AuthFailures {
 
 /// @nodoc
 
-class InavalidEmailAndPasswordCombination implements AuthFailures {
-  const InavalidEmailAndPasswordCombination();
+class InvalidEmailAndPasswordCombination implements AuthFailures {
+  const InvalidEmailAndPasswordCombination();
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is InavalidEmailAndPasswordCombination);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is InvalidEmailAndPasswordCombination);
   }
 
   @override

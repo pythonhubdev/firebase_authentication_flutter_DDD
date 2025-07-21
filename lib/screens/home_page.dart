@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: CustomScrollView(
         slivers: [
           // Modern App Bar with Material You design
@@ -70,8 +70,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      Theme.of(context).colorScheme.primaryContainer.withOpacity(0.3),
-                      Theme.of(context).colorScheme.secondaryContainer.withOpacity(0.3),
+                      Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.3),
+                      Theme.of(context).colorScheme.secondaryContainer.withValues(alpha: 0.3),
                     ],
                   ),
                 ),
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
+                                color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
                                 spreadRadius: 0,
                                 blurRadius: 20,
                                 offset: const Offset(0, 10),
@@ -259,7 +259,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 SlideInWidget(
                   delay: 700,
                   child: Card(
-                    color: Theme.of(context).colorScheme.primaryContainer.withOpacity(0.3),
+                    color: Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.3),
                     child: Padding(
                       padding: const EdgeInsets.all(24),
                       child: Column(
@@ -338,10 +338,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       borderRadius: BorderRadius.circular(20),
       child: Container(
         decoration: BoxDecoration(
-          color: color.withOpacity(0.1),
+          color: color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: color.withOpacity(0.3),
+            color: color.withValues(alpha: 0.3),
             width: 1,
           ),
         ),

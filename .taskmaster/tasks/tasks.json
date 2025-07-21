@@ -24,9 +24,67 @@
         "title": "Refactor and Clean Up Codebase",
         "description": "Improve the quality, readability, and maintainability of the codebase. This includes updating all dependencies to their latest stable versions, improving error handling, enhancing input validation, and ensuring the code is well-organized.",
         "status": "pending",
-        "priority": "medium",
         "dependencies": [
           1
+        ],
+        "priority": "medium",
+        "details": "",
+        "testStrategy": "",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Refactor Domain Layer",
+            "description": "Fix typos, enhance email validation with industry-standard regex, strengthen password security (8+ chars)",
+            "status": "done",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Refactor Application Layer",
+            "description": "Streamline AuthStateController, improve error handling, cleaner code structure",
+            "status": "done",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Refactor Services Layer",
+            "description": "Enhance Firebase Auth Facade with centralized error mapping and better null safety",
+            "status": "done",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Refactor UI Components",
+            "description": "Refactor Login/Registration pages with modular structure, extract helper methods, enhance validation",
+            "status": "done",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "App Level Improvements",
+            "description": "Simplify routing, add global page transitions, performance improvements",
+            "status": "done",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Update Dependencies",
+            "description": "Update all dependencies to their latest stable versions",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          }
         ]
       },
       {

@@ -1,0 +1,11 @@
+# Task ID: 1
+# Title: Migrate to Riverpod 3.0
+# Status: done
+# Dependencies: None
+# Priority: high
+# Description: Update the application to use the latest stable version of Riverpod 3.0. This includes updating the `hooks_riverpod` dependency, refactoring providers and widgets, and ensuring the state management is robust.
+# Details:
+
+
+# Test Strategy:
+
