@@ -15,38 +15,36 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AuthStates {
   EmailAddress get emailAddress;
+
   Password get password;
+
   bool get isSubmitting;
+
   bool get showError;
+
   Option<Either<AuthFailures, Unit>> get authFailureOrSuccess;
 
   /// Create a copy of AuthStates
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $AuthStatesCopyWith<AuthStates> get copyWith =>
-      _$AuthStatesCopyWithImpl<AuthStates>(this as AuthStates, _$identity);
+  $AuthStatesCopyWith<AuthStates> get copyWith => _$AuthStatesCopyWithImpl<AuthStates>(this as AuthStates, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AuthStates &&
-            (identical(other.emailAddress, emailAddress) ||
-                other.emailAddress == emailAddress) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                other.isSubmitting == isSubmitting) &&
-            (identical(other.showError, showError) ||
-                other.showError == showError) &&
+            (identical(other.emailAddress, emailAddress) || other.emailAddress == emailAddress) &&
+            (identical(other.password, password) || other.password == password) &&
+            (identical(other.isSubmitting, isSubmitting) || other.isSubmitting == isSubmitting) &&
+            (identical(other.showError, showError) || other.showError == showError) &&
             (identical(other.authFailureOrSuccess, authFailureOrSuccess) ||
                 other.authFailureOrSuccess == authFailureOrSuccess));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, emailAddress, password,
-      isSubmitting, showError, authFailureOrSuccess);
+  int get hashCode => Object.hash(runtimeType, emailAddress, password, isSubmitting, showError, authFailureOrSuccess);
 
   @override
   String toString() {
@@ -56,9 +54,8 @@ mixin _$AuthStates {
 
 /// @nodoc
 abstract mixin class $AuthStatesCopyWith<$Res> {
-  factory $AuthStatesCopyWith(
-          AuthStates value, $Res Function(AuthStates) _then) =
-      _$AuthStatesCopyWithImpl;
+  factory $AuthStatesCopyWith(AuthStates value, $Res Function(AuthStates) _then) = _$AuthStatesCopyWithImpl;
+
   @useResult
   $Res call(
       {EmailAddress emailAddress,
@@ -202,11 +199,7 @@ extension AuthStatesPatterns on AuthStates {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            EmailAddress emailAddress,
-            Password password,
-            bool isSubmitting,
-            bool showError,
+    TResult Function(EmailAddress emailAddress, Password password, bool isSubmitting, bool showError,
             Option<Either<AuthFailures, Unit>> authFailureOrSuccess)?
         $default, {
     required TResult orElse(),
@@ -214,8 +207,8 @@ extension AuthStatesPatterns on AuthStates {
     final _that = this;
     switch (_that) {
       case _AuthStates() when $default != null:
-        return $default(_that.emailAddress, _that.password, _that.isSubmitting,
-            _that.showError, _that.authFailureOrSuccess);
+        return $default(
+            _that.emailAddress, _that.password, _that.isSubmitting, _that.showError, _that.authFailureOrSuccess);
       case _:
         return orElse();
     }
@@ -236,19 +229,15 @@ extension AuthStatesPatterns on AuthStates {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            EmailAddress emailAddress,
-            Password password,
-            bool isSubmitting,
-            bool showError,
+    TResult Function(EmailAddress emailAddress, Password password, bool isSubmitting, bool showError,
             Option<Either<AuthFailures, Unit>> authFailureOrSuccess)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AuthStates():
-        return $default(_that.emailAddress, _that.password, _that.isSubmitting,
-            _that.showError, _that.authFailureOrSuccess);
+        return $default(
+            _that.emailAddress, _that.password, _that.isSubmitting, _that.showError, _that.authFailureOrSuccess);
     }
   }
 
@@ -266,19 +255,15 @@ extension AuthStatesPatterns on AuthStates {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            EmailAddress emailAddress,
-            Password password,
-            bool isSubmitting,
-            bool showError,
+    TResult? Function(EmailAddress emailAddress, Password password, bool isSubmitting, bool showError,
             Option<Either<AuthFailures, Unit>> authFailureOrSuccess)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AuthStates() when $default != null:
-        return $default(_that.emailAddress, _that.password, _that.isSubmitting,
-            _that.showError, _that.authFailureOrSuccess);
+        return $default(
+            _that.emailAddress, _that.password, _that.isSubmitting, _that.showError, _that.authFailureOrSuccess);
       case _:
         return null;
     }
@@ -311,29 +296,23 @@ class _AuthStates implements AuthStates {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$AuthStatesCopyWith<_AuthStates> get copyWith =>
-      __$AuthStatesCopyWithImpl<_AuthStates>(this, _$identity);
+  _$AuthStatesCopyWith<_AuthStates> get copyWith => __$AuthStatesCopyWithImpl<_AuthStates>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AuthStates &&
-            (identical(other.emailAddress, emailAddress) ||
-                other.emailAddress == emailAddress) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                other.isSubmitting == isSubmitting) &&
-            (identical(other.showError, showError) ||
-                other.showError == showError) &&
+            (identical(other.emailAddress, emailAddress) || other.emailAddress == emailAddress) &&
+            (identical(other.password, password) || other.password == password) &&
+            (identical(other.isSubmitting, isSubmitting) || other.isSubmitting == isSubmitting) &&
+            (identical(other.showError, showError) || other.showError == showError) &&
             (identical(other.authFailureOrSuccess, authFailureOrSuccess) ||
                 other.authFailureOrSuccess == authFailureOrSuccess));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, emailAddress, password,
-      isSubmitting, showError, authFailureOrSuccess);
+  int get hashCode => Object.hash(runtimeType, emailAddress, password, isSubmitting, showError, authFailureOrSuccess);
 
   @override
   String toString() {
@@ -342,11 +321,9 @@ class _AuthStates implements AuthStates {
 }
 
 /// @nodoc
-abstract mixin class _$AuthStatesCopyWith<$Res>
-    implements $AuthStatesCopyWith<$Res> {
-  factory _$AuthStatesCopyWith(
-          _AuthStates value, $Res Function(_AuthStates) _then) =
-      __$AuthStatesCopyWithImpl;
+abstract mixin class _$AuthStatesCopyWith<$Res> implements $AuthStatesCopyWith<$Res> {
+  factory _$AuthStatesCopyWith(_AuthStates value, $Res Function(_AuthStates) _then) = __$AuthStatesCopyWithImpl;
+
   @override
   @useResult
   $Res call(

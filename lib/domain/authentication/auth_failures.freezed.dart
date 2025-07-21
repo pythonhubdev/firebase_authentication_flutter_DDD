@@ -16,8 +16,7 @@ T _$identity<T>(T value) => value;
 mixin _$AuthFailures {
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is AuthFailures);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is AuthFailures);
   }
 
   @override
@@ -52,8 +51,7 @@ extension AuthFailuresPatterns on AuthFailures {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InavalidEmailAndPasswordCombination value)?
-        invalidEmailAndPasswordCombination,
+    TResult Function(InavalidEmailAndPasswordCombination value)? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) {
     final _that = this;
@@ -62,8 +60,7 @@ extension AuthFailuresPatterns on AuthFailures {
         return serverError(_that);
       case EmailAlreadyInUse() when emailAlreadyInUse != null:
         return emailAlreadyInUse(_that);
-      case InavalidEmailAndPasswordCombination()
-          when invalidEmailAndPasswordCombination != null:
+      case InavalidEmailAndPasswordCombination() when invalidEmailAndPasswordCombination != null:
         return invalidEmailAndPasswordCombination(_that);
       case _:
         return orElse();
@@ -87,8 +84,7 @@ extension AuthFailuresPatterns on AuthFailures {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
-    required TResult Function(InavalidEmailAndPasswordCombination value)
-        invalidEmailAndPasswordCombination,
+    required TResult Function(InavalidEmailAndPasswordCombination value) invalidEmailAndPasswordCombination,
   }) {
     final _that = this;
     switch (_that) {
@@ -119,8 +115,7 @@ extension AuthFailuresPatterns on AuthFailures {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerError value)? serverError,
     TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult? Function(InavalidEmailAndPasswordCombination value)?
-        invalidEmailAndPasswordCombination,
+    TResult? Function(InavalidEmailAndPasswordCombination value)? invalidEmailAndPasswordCombination,
   }) {
     final _that = this;
     switch (_that) {
@@ -128,8 +123,7 @@ extension AuthFailuresPatterns on AuthFailures {
         return serverError(_that);
       case EmailAlreadyInUse() when emailAlreadyInUse != null:
         return emailAlreadyInUse(_that);
-      case InavalidEmailAndPasswordCombination()
-          when invalidEmailAndPasswordCombination != null:
+      case InavalidEmailAndPasswordCombination() when invalidEmailAndPasswordCombination != null:
         return invalidEmailAndPasswordCombination(_that);
       case _:
         return null;
@@ -161,8 +155,7 @@ extension AuthFailuresPatterns on AuthFailures {
         return serverError();
       case EmailAlreadyInUse() when emailAlreadyInUse != null:
         return emailAlreadyInUse();
-      case InavalidEmailAndPasswordCombination()
-          when invalidEmailAndPasswordCombination != null:
+      case InavalidEmailAndPasswordCombination() when invalidEmailAndPasswordCombination != null:
         return invalidEmailAndPasswordCombination();
       case _:
         return orElse();
@@ -225,8 +218,7 @@ extension AuthFailuresPatterns on AuthFailures {
         return serverError();
       case EmailAlreadyInUse() when emailAlreadyInUse != null:
         return emailAlreadyInUse();
-      case InavalidEmailAndPasswordCombination()
-          when invalidEmailAndPasswordCombination != null:
+      case InavalidEmailAndPasswordCombination() when invalidEmailAndPasswordCombination != null:
         return invalidEmailAndPasswordCombination();
       case _:
         return null;
@@ -241,8 +233,7 @@ class ServerError implements AuthFailures {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ServerError);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is ServerError);
   }
 
   @override
@@ -261,8 +252,7 @@ class EmailAlreadyInUse implements AuthFailures {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is EmailAlreadyInUse);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is EmailAlreadyInUse);
   }
 
   @override
@@ -281,9 +271,7 @@ class InavalidEmailAndPasswordCombination implements AuthFailures {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is InavalidEmailAndPasswordCombination);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is InavalidEmailAndPasswordCombination);
   }
 
   @override

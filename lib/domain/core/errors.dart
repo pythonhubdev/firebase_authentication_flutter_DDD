@@ -7,7 +7,6 @@ class UnExpectedValueError extends Error {
 
   @override
   String toString() {
-    return Error.safeToString(
-        "UnExpectedValueError{authValueFailures: $authValueFailures}");
+    return Error.safeToString("UnExpectedValueError{authValueFailures: $authValueFailures}");
   }
 }

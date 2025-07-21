@@ -2,7 +2,6 @@ import "package:firebase_auth_flutter_ddd/domain/authentication/auth_value_failu
 import "package:flutter/cupertino.dart";
 import "package:fpdart/fpdart.dart";
 
-
 @immutable
 abstract class ValueObject<T> {
   const ValueObject();
@@ -13,8 +12,7 @@ abstract class ValueObject<T> {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ValueObject<T> && runtimeType == other.runtimeType;
+      identical(this, other) || other is ValueObject<T> && runtimeType == other.runtimeType;
 
   @override
   int get hashCode => 0;

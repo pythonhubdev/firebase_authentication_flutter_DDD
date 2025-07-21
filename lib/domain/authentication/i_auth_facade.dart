@@ -2,7 +2,6 @@ import "package:firebase_auth_flutter_ddd/domain/authentication/auth_failures.da
 import "package:firebase_auth_flutter_ddd/domain/authentication/auth_value_objects.dart";
 import "package:fpdart/fpdart.dart";
 
-
 abstract class IAuthFacade {
   Future<Either<AuthFailures, Unit>> registerWithEmailAndPassword(
       {required EmailAddress? emailAddress, required Password? password});
