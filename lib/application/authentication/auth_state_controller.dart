@@ -8,6 +8,10 @@ import "../../services/authentication/firebase_auth_facade.dart";
 import "auth_events.dart";
 import "auth_states.dart";
 
+final authStateControllerProvider = NotifierProvider<AuthStateController, AuthStates>(
+  AuthStateController.new,
+);
+
 class AuthStateController extends Notifier<AuthStates> {
   @override
   AuthStates build() {
@@ -19,87 +23,84 @@ class AuthStateController extends Notifier<AuthStates> {
   Future<void> mapEventsToStates(AuthEvents events) async {
     await events.map(
       emailChanged: (value) async {
-        state = state.copyWith(
-            emailAddress: EmailAddress(
-              email: value.email,
-            ),
-            authFailureOrSuccess: none());
+        _updateEmail(value.email!);
       },
       passwordChanged: (value) async {
-        state = state.copyWith(
-          password: Password(
-            password: value.password,
-          ),
-          authFailureOrSuccess: none(),
-        );
+        _updatePassword(value.password!);
       },
       signUpWithEmailAndPasswordPressed: (value) async {
-        await _performAuthAction(
-          _authFacade.registerWithEmailAndPassword,
-        );
+        await signUpWithEmailAndPassword();
       },
       signInWithEmailAndPasswordPressed: (value) async {
-        await _performAuthAction(
-          _authFacade.signInWithEmailAndPassword,
-        );
+        await signInWithEmailAndPassword();
       },
     );
   }
 
   void emailChanged(String email) {
-    state = state.copyWith(
-      emailAddress: EmailAddress(email: email),
-      authFailureOrSuccess: none(),
-    );
+    _updateEmail(email);
   }
 
   void passwordChanged(String password) {
+    _updatePassword(password);
+  }
+
+  void _updateEmail(String email) {
+    state = state.copyWith(
+      emailAddress: EmailAddress(email: email),
+      authFailureOrSuccess: none(),
+      showError: false,
+    );
+  }
+
+  void _updatePassword(String password) {
     state = state.copyWith(
       password: Password(password: password),
       authFailureOrSuccess: none(),
+      showError: false,
     );
   }
 
   Future<void> signUpWithEmailAndPassword() async {
-    await _performAuthAction(
-      _authFacade.registerWithEmailAndPassword,
-    );
+    await _performAuthAction(_authFacade.registerWithEmailAndPassword);
   }
 
   Future<void> signInWithEmailAndPassword() async {
-    await _performAuthAction(
-      _authFacade.signInWithEmailAndPassword,
-    );
+    await _performAuthAction(_authFacade.signInWithEmailAndPassword);
   }
 
   Future<void> _performAuthAction(
-    Future<Either<AuthFailures, Unit>> Function({required EmailAddress emailAddress, required Password password})
-        forwardCall,
+    Future<Either<AuthFailures, Unit>> Function({
+      required EmailAddress emailAddress,
+      required Password password,
+    }) forwardCall,
   ) async {
     final isEmailValid = state.emailAddress.isValid();
     final isPasswordValid = state.password.isValid();
-    Either<AuthFailures, Unit>? failureOrSuccess;
 
-    if (isEmailValid && isPasswordValid) {
+    if (!isEmailValid || !isPasswordValid) {
       state = state.copyWith(
-        isSubmitting: true,
+        showError: true,
         authFailureOrSuccess: none(),
       );
-
-      failureOrSuccess = await forwardCall(
-        emailAddress: state.emailAddress,
-        password: state.password,
-      );
+      return;
     }
 
     state = state.copyWith(
+      isSubmitting: true,
+      authFailureOrSuccess: none(),
+      showError: false,
+    );
+
+    final failureOrSuccess = await forwardCall(
+      emailAddress: state.emailAddress,
+      password: state.password,
+    );
+
+    state = state.copyWith(
       isSubmitting: false,
-      showError: true,
+      showError: failureOrSuccess.isLeft(),
       authFailureOrSuccess: optionOf(failureOrSuccess),
     );
   }
 }
-
-final authStateControllerProvider = NotifierProvider<AuthStateController, AuthStates>(() {
-  return AuthStateController();
-});

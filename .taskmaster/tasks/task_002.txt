@@ -1,0 +1,11 @@
+# Task ID: 2
+# Title: Modernize the User Interface
+# Status: done
+# Dependencies: 1
+# Priority: high
+# Description: Redesign the login, registration, and home pages to be more modern and visually appealing. Adopt a clean design language like Material You, create a consistent theme, and add animations to enhance the user experience.
+# Details:
+
+
+# Test Strategy:
+
