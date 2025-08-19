@@ -16,7 +16,7 @@ dependencies:
     firebase_core: ^3.15.2
     flutter:
         sdk: flutter
-    flutter_hooks: ^0.21.2
+    flutter_hooks: ^0.21.3
     fpdart: ^1.1.1
     freezed_annotation: ^3.1.0
     hooks_riverpod: ^3.0.0-dev.16
